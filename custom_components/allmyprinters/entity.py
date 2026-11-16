@@ -184,7 +184,8 @@ class ControlEntity(PrinterEntity):
 
     @property
     def available(self) -> bool:
-        return super().available and bool(self.item)
+        # set=false: the printer only accepts changes during a print (Anycubic, Flashforge) → unavailable until then
+        return super().available and bool(self.item) and self.item.get("set") is not False
 
 
 def add_control_entities(entry, coordinator: AllMyPrintersCoordinator, async_add_entities, cls: type[ControlEntity]) -> None:

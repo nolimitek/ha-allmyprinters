@@ -44,7 +44,7 @@ Per printer (one device each, below the agent device):
 | `binary_sensor` Online, Printing, Problem | Problem = printer error (e.g. Klipper not ready), with the message |
 | `button` Pause / Resume / Cancel print | available only when it makes sense |
 | `light` Light, Head light, Camera light | for printers whose lights the agent can switch |
-| `fan` Part fan, Aux fan, Enclosure fan, Chamber fan, Air filter, Exhaust | speed in percent. Some printers only accept fan changes during a print; Home Assistant then shows an error |
+| `fan` Part fan, Aux fan, Enclosure fan, Chamber fan, Air filter, Exhaust | speed in percent. Fans a printer only lets you change during a print (Anycubic, Flashforge) are unavailable while it is idle |
 | `event` Print | `started`, `finished`, `failed`, `cancelled` — for automations |
 | `camera` Camera | the printer's camera, through the agent (MJPEG, Anycubic/Bambu video and others). Live view in Home Assistant shows about two pictures per second |
 | `image` Model | preview picture of the model that is printing; unavailable while nothing prints |

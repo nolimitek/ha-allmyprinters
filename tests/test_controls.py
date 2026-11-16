@@ -114,3 +114,12 @@ async def test_two_lights_of_one_kind(hass: HomeAssistant, aioclient_mock, paylo
     await _setup(hass, aioclient_mock, payload)
     assert hass.states.get("light.kobra_s1_chamber_light").state == "on"
     assert hass.states.get("light.kobra_s1_top_led").state == "off"
+
+
+async def test_fan_unavailable_while_printer_refuses_changes(hass: HomeAssistant, aioclient_mock, payload) -> None:
+    """Anycubic/Flashforge only take fan changes during a print (set=false) — the fan shows unavailable instead of failing."""
+    for f in payload["printers"][0]["ctl"]["fans"]:
+        f["set"] = False
+    await _setup(hass, aioclient_mock, payload)
+    assert hass.states.get("fan.kobra_s1_part_fan").state == "unavailable"
+    assert hass.states.get("light.kobra_s1_light").state == "on"   # lights are not affected
