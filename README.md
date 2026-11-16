@@ -46,6 +46,8 @@ Per printer (one device each, below the agent device):
 | `light` Light, Head light, Camera light | for printers whose lights the agent can switch |
 | `fan` Part fan, Aux fan, Enclosure fan, Chamber fan, Air filter, Exhaust | speed in percent. Some printers only accept fan changes during a print; Home Assistant then shows an error |
 | `event` Print | `started`, `finished`, `failed`, `cancelled` — for automations |
+| `camera` Camera | the printer's camera, through the agent (MJPEG, Anycubic/Bambu video and others). Live view in Home Assistant shows about two pictures per second |
+| `image` Model | preview picture of the model that is printing; unavailable while nothing prints |
 | `switch` *Box* drying | start/stop drying (e.g. Anycubic ACE) using the two settings below |
 | `number` *Box* drying temperature / duration | 35–55 °C, 1–24 h, kept in Home Assistant |
 | `sensor` *Box* temperature / humidity / drying time remaining | where the box reports them |
@@ -83,6 +85,19 @@ Smaller cards with a single part, same `device` and `name` options:
 | `custom:allmyprinters-slots-card` | only the filament slots |
 | `custom:allmyprinters-box-card` | the filament box with climate and drying |
 | `custom:allmyprinters-stock-card` | filament in stock and all spools; low ones first (`rows: 12` to show more before folding) |
+
+### Camera on a dashboard
+
+Any camera card works, for example a picture card with live view:
+
+```yaml
+type: picture-entity
+entity: camera.kobra_s1_camera
+camera_view: live
+show_state: false
+```
+
+The agent reads the printer's camera only while a dashboard with it is open and stops about 20 seconds after.
 
 ## Example automation
 

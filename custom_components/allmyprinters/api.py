@@ -10,6 +10,7 @@ from yarl import URL
 
 # The agent answers from its own 15 s state; only when that is stale does it ask the printers first
 TIMEOUT = aiohttp.ClientTimeout(total=30)
+IMAGE_TIMEOUT = aiohttp.ClientTimeout(total=15)
 
 
 class AllMyPrintersError(Exception):
@@ -82,3 +83,23 @@ class AllMyPrintersApi:
     async def command(self, printer_id: str, cmd: str, **params: Any) -> None:
         """pause | resume | stop | dry_start | dry_stop | light | fan."""
         await self._request("POST", {"printer": printer_id, "cmd": cmd, **params})
+
+    async def image(self, kind: str, printer_id: str) -> tuple[bytes, str] | None:
+        """Camera snapshot (kind "cam", JPEG) or the running job's model picture ("thumb"); None when there is none.
+
+        The first camera picture can take a few seconds: the agent starts reading the printer's video stream on demand.
+        """
+        try:
+            async with self._session.get(
+                self.url / kind / printer_id,
+                headers={"Authorization": f"Bearer {self._token}"},
+                timeout=IMAGE_TIMEOUT,
+            ) as resp:
+                if resp.status in (401, 403):
+                    raise AllMyPrintersAuthError("auth")
+                if resp.status != 200:
+                    return None
+                body = await resp.read()
+                return (body, resp.content_type or "image/jpeg") if body else None
+        except (aiohttp.ClientError, asyncio.TimeoutError):
+            return None

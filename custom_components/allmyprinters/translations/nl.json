@@ -57,6 +57,119 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "Print"
+      },
+      "problem": {
+        "name": "Probleem",
+        "state_attributes": {
+          "error": {
+            "name": "Fout"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Print pauzeren"
+      },
+      "resume": {
+        "name": "Print hervatten"
+      },
+      "cancel": {
+        "name": "Print annuleren"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Camera"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Print",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Gestart",
+              "finished": "Klaar",
+              "failed": "Mislukt",
+              "cancelled": "Geannuleerd"
+            }
+          }
+        }
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Onderdeelventilator"
+      },
+      "fan_aux": {
+        "name": "Hulpventilator"
+      },
+      "fan_box": {
+        "name": "Behuizingventilator"
+      },
+      "fan_chamber": {
+        "name": "Kamerventilator"
+      },
+      "fan_filter": {
+        "name": "Luchtfilter"
+      },
+      "fan_exhaust": {
+        "name": "Afzuiging"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    },
+    "image": {
+      "model": {
+        "name": "Model"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Licht"
+      },
+      "light_head": {
+        "name": "Kopverlichting"
+      },
+      "light_camera": {
+        "name": "Cameralicht"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} droogtemperatuur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} droogduur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
     "sensor": {
       "status": {
         "name": "Status",
@@ -288,46 +401,6 @@
         }
       }
     },
-    "binary_sensor": {
-      "online": {
-        "name": "Online"
-      },
-      "printing": {
-        "name": "Print"
-      },
-      "problem": {
-        "name": "Probleem",
-        "state_attributes": {
-          "error": {
-            "name": "Fout"
-          }
-        }
-      }
-    },
-    "number": {
-      "box_dry_temperature": {
-        "name": "{box} droogtemperatuur",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      },
-      "box_dry_duration": {
-        "name": "{box} droogduur",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      }
-    },
     "switch": {
       "box_drying": {
         "name": "{box} drogen",
@@ -348,69 +421,6 @@
             "name": "Duur (min)"
           }
         }
-      }
-    },
-    "button": {
-      "pause": {
-        "name": "Print pauzeren"
-      },
-      "resume": {
-        "name": "Print hervatten"
-      },
-      "cancel": {
-        "name": "Print annuleren"
-      }
-    },
-    "event": {
-      "print": {
-        "name": "Print",
-        "state_attributes": {
-          "event_type": {
-            "state": {
-              "started": "Gestart",
-              "finished": "Klaar",
-              "failed": "Mislukt",
-              "cancelled": "Geannuleerd"
-            }
-          }
-        }
-      }
-    },
-    "light": {
-      "light_chamber": {
-        "name": "Licht"
-      },
-      "light_head": {
-        "name": "Kopverlichting"
-      },
-      "light_camera": {
-        "name": "Cameralicht"
-      },
-      "light_other": {
-        "name": "{name}"
-      }
-    },
-    "fan": {
-      "fan_part": {
-        "name": "Onderdeelventilator"
-      },
-      "fan_aux": {
-        "name": "Hulpventilator"
-      },
-      "fan_box": {
-        "name": "Behuizingventilator"
-      },
-      "fan_chamber": {
-        "name": "Kamerventilator"
-      },
-      "fan_filter": {
-        "name": "Luchtfilter"
-      },
-      "fan_exhaust": {
-        "name": "Afzuiging"
-      },
-      "fan_other": {
-        "name": "{name}"
       }
     }
   },

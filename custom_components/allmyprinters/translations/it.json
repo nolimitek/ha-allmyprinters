@@ -57,6 +57,119 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "In stampa"
+      },
+      "problem": {
+        "name": "Problema",
+        "state_attributes": {
+          "error": {
+            "name": "Errore"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Metti in pausa"
+      },
+      "resume": {
+        "name": "Riprendi stampa"
+      },
+      "cancel": {
+        "name": "Annulla stampa"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Fotocamera"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Stampa",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Avviata",
+              "finished": "Completata",
+              "failed": "Fallita",
+              "cancelled": "Annullata"
+            }
+          }
+        }
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Ventola pezzo"
+      },
+      "fan_aux": {
+        "name": "Ventola ausiliaria"
+      },
+      "fan_box": {
+        "name": "Ventola del case"
+      },
+      "fan_chamber": {
+        "name": "Ventola della camera"
+      },
+      "fan_filter": {
+        "name": "Filtro aria"
+      },
+      "fan_exhaust": {
+        "name": "Estrazione"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    },
+    "image": {
+      "model": {
+        "name": "Modello"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Luce"
+      },
+      "light_head": {
+        "name": "Luce della testina"
+      },
+      "light_camera": {
+        "name": "Luce della webcam"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} temperatura di essiccazione",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} durata essiccazione",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
     "sensor": {
       "status": {
         "name": "Stato",
@@ -288,46 +401,6 @@
         }
       }
     },
-    "binary_sensor": {
-      "online": {
-        "name": "Online"
-      },
-      "printing": {
-        "name": "In stampa"
-      },
-      "problem": {
-        "name": "Problema",
-        "state_attributes": {
-          "error": {
-            "name": "Errore"
-          }
-        }
-      }
-    },
-    "number": {
-      "box_dry_temperature": {
-        "name": "{box} temperatura di essiccazione",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      },
-      "box_dry_duration": {
-        "name": "{box} durata essiccazione",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      }
-    },
     "switch": {
       "box_drying": {
         "name": "{box} essiccazione",
@@ -348,69 +421,6 @@
             "name": "Durata (min)"
           }
         }
-      }
-    },
-    "button": {
-      "pause": {
-        "name": "Metti in pausa"
-      },
-      "resume": {
-        "name": "Riprendi stampa"
-      },
-      "cancel": {
-        "name": "Annulla stampa"
-      }
-    },
-    "event": {
-      "print": {
-        "name": "Stampa",
-        "state_attributes": {
-          "event_type": {
-            "state": {
-              "started": "Avviata",
-              "finished": "Completata",
-              "failed": "Fallita",
-              "cancelled": "Annullata"
-            }
-          }
-        }
-      }
-    },
-    "light": {
-      "light_chamber": {
-        "name": "Luce"
-      },
-      "light_head": {
-        "name": "Luce della testina"
-      },
-      "light_camera": {
-        "name": "Luce della webcam"
-      },
-      "light_other": {
-        "name": "{name}"
-      }
-    },
-    "fan": {
-      "fan_part": {
-        "name": "Ventola pezzo"
-      },
-      "fan_aux": {
-        "name": "Ventola ausiliaria"
-      },
-      "fan_box": {
-        "name": "Ventola del case"
-      },
-      "fan_chamber": {
-        "name": "Ventola della camera"
-      },
-      "fan_filter": {
-        "name": "Filtro aria"
-      },
-      "fan_exhaust": {
-        "name": "Estrazione"
-      },
-      "fan_other": {
-        "name": "{name}"
       }
     }
   },

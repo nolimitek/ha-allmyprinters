@@ -57,6 +57,119 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "Printing"
+      },
+      "problem": {
+        "name": "Problem",
+        "state_attributes": {
+          "error": {
+            "name": "Error"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Pause print"
+      },
+      "resume": {
+        "name": "Resume print"
+      },
+      "cancel": {
+        "name": "Cancel print"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Camera"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Print",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Started",
+              "finished": "Finished",
+              "failed": "Failed",
+              "cancelled": "Cancelled"
+            }
+          }
+        }
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Part fan"
+      },
+      "fan_aux": {
+        "name": "Aux fan"
+      },
+      "fan_box": {
+        "name": "Enclosure fan"
+      },
+      "fan_chamber": {
+        "name": "Chamber fan"
+      },
+      "fan_filter": {
+        "name": "Air filter"
+      },
+      "fan_exhaust": {
+        "name": "Exhaust"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    },
+    "image": {
+      "model": {
+        "name": "Model"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Light"
+      },
+      "light_head": {
+        "name": "Head light"
+      },
+      "light_camera": {
+        "name": "Camera light"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} drying temperature",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} drying duration",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
     "sensor": {
       "status": {
         "name": "Status",
@@ -288,46 +401,6 @@
         }
       }
     },
-    "binary_sensor": {
-      "online": {
-        "name": "Online"
-      },
-      "printing": {
-        "name": "Printing"
-      },
-      "problem": {
-        "name": "Problem",
-        "state_attributes": {
-          "error": {
-            "name": "Error"
-          }
-        }
-      }
-    },
-    "number": {
-      "box_dry_temperature": {
-        "name": "{box} drying temperature",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      },
-      "box_dry_duration": {
-        "name": "{box} drying duration",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      }
-    },
     "switch": {
       "box_drying": {
         "name": "{box} drying",
@@ -348,69 +421,6 @@
             "name": "Duration (min)"
           }
         }
-      }
-    },
-    "button": {
-      "pause": {
-        "name": "Pause print"
-      },
-      "resume": {
-        "name": "Resume print"
-      },
-      "cancel": {
-        "name": "Cancel print"
-      }
-    },
-    "event": {
-      "print": {
-        "name": "Print",
-        "state_attributes": {
-          "event_type": {
-            "state": {
-              "started": "Started",
-              "finished": "Finished",
-              "failed": "Failed",
-              "cancelled": "Cancelled"
-            }
-          }
-        }
-      }
-    },
-    "light": {
-      "light_chamber": {
-        "name": "Light"
-      },
-      "light_head": {
-        "name": "Head light"
-      },
-      "light_camera": {
-        "name": "Camera light"
-      },
-      "light_other": {
-        "name": "{name}"
-      }
-    },
-    "fan": {
-      "fan_part": {
-        "name": "Part fan"
-      },
-      "fan_aux": {
-        "name": "Aux fan"
-      },
-      "fan_box": {
-        "name": "Enclosure fan"
-      },
-      "fan_chamber": {
-        "name": "Chamber fan"
-      },
-      "fan_filter": {
-        "name": "Air filter"
-      },
-      "fan_exhaust": {
-        "name": "Exhaust"
-      },
-      "fan_other": {
-        "name": "{name}"
       }
     }
   },

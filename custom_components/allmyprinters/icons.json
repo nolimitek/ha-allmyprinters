@@ -168,6 +168,11 @@
           "off": "mdi:fan-off"
         }
       }
+    },
+    "image": {
+      "model": {
+        "default": "mdi:cube-outline"
+      }
     }
   }
 }

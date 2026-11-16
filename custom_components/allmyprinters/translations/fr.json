@@ -57,6 +57,119 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "En ligne"
+      },
+      "printing": {
+        "name": "Impression"
+      },
+      "problem": {
+        "name": "Problème",
+        "state_attributes": {
+          "error": {
+            "name": "Erreur"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Mettre en pause"
+      },
+      "resume": {
+        "name": "Reprendre l’impression"
+      },
+      "cancel": {
+        "name": "Annuler l’impression"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Caméra"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Impression",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Démarrée",
+              "finished": "Terminée",
+              "failed": "Échouée",
+              "cancelled": "Annulée"
+            }
+          }
+        }
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Ventilateur de pièce"
+      },
+      "fan_aux": {
+        "name": "Ventilateur auxiliaire"
+      },
+      "fan_box": {
+        "name": "Ventilateur du caisson"
+      },
+      "fan_chamber": {
+        "name": "Ventilateur de chambre"
+      },
+      "fan_filter": {
+        "name": "Filtre à air"
+      },
+      "fan_exhaust": {
+        "name": "Extraction"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    },
+    "image": {
+      "model": {
+        "name": "Modèle"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Éclairage"
+      },
+      "light_head": {
+        "name": "Éclairage de la tête"
+      },
+      "light_camera": {
+        "name": "Éclairage de la caméra"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} température de séchage",
+        "state_attributes": {
+          "box_id": {
+            "name": "Boîtier"
+          },
+          "box": {
+            "name": "Boîtier"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} durée de séchage",
+        "state_attributes": {
+          "box_id": {
+            "name": "Boîtier"
+          },
+          "box": {
+            "name": "Boîtier"
+          }
+        }
+      }
+    },
     "sensor": {
       "status": {
         "name": "État",
@@ -288,46 +401,6 @@
         }
       }
     },
-    "binary_sensor": {
-      "online": {
-        "name": "En ligne"
-      },
-      "printing": {
-        "name": "Impression"
-      },
-      "problem": {
-        "name": "Problème",
-        "state_attributes": {
-          "error": {
-            "name": "Erreur"
-          }
-        }
-      }
-    },
-    "number": {
-      "box_dry_temperature": {
-        "name": "{box} température de séchage",
-        "state_attributes": {
-          "box_id": {
-            "name": "Boîtier"
-          },
-          "box": {
-            "name": "Boîtier"
-          }
-        }
-      },
-      "box_dry_duration": {
-        "name": "{box} durée de séchage",
-        "state_attributes": {
-          "box_id": {
-            "name": "Boîtier"
-          },
-          "box": {
-            "name": "Boîtier"
-          }
-        }
-      }
-    },
     "switch": {
       "box_drying": {
         "name": "{box} séchage",
@@ -348,69 +421,6 @@
             "name": "Durée (min)"
           }
         }
-      }
-    },
-    "button": {
-      "pause": {
-        "name": "Mettre en pause"
-      },
-      "resume": {
-        "name": "Reprendre l’impression"
-      },
-      "cancel": {
-        "name": "Annuler l’impression"
-      }
-    },
-    "event": {
-      "print": {
-        "name": "Impression",
-        "state_attributes": {
-          "event_type": {
-            "state": {
-              "started": "Démarrée",
-              "finished": "Terminée",
-              "failed": "Échouée",
-              "cancelled": "Annulée"
-            }
-          }
-        }
-      }
-    },
-    "light": {
-      "light_chamber": {
-        "name": "Éclairage"
-      },
-      "light_head": {
-        "name": "Éclairage de la tête"
-      },
-      "light_camera": {
-        "name": "Éclairage de la caméra"
-      },
-      "light_other": {
-        "name": "{name}"
-      }
-    },
-    "fan": {
-      "fan_part": {
-        "name": "Ventilateur de pièce"
-      },
-      "fan_aux": {
-        "name": "Ventilateur auxiliaire"
-      },
-      "fan_box": {
-        "name": "Ventilateur du caisson"
-      },
-      "fan_chamber": {
-        "name": "Ventilateur de chambre"
-      },
-      "fan_filter": {
-        "name": "Filtre à air"
-      },
-      "fan_exhaust": {
-        "name": "Extraction"
-      },
-      "fan_other": {
-        "name": "{name}"
       }
     }
   },

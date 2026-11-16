@@ -57,6 +57,119 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "Druckt"
+      },
+      "problem": {
+        "name": "Problem",
+        "state_attributes": {
+          "error": {
+            "name": "Fehler"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Druck pausieren"
+      },
+      "resume": {
+        "name": "Druck fortsetzen"
+      },
+      "cancel": {
+        "name": "Druck abbrechen"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Kamera"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Druck",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Gestartet",
+              "finished": "Fertig",
+              "failed": "Fehlgeschlagen",
+              "cancelled": "Abgebrochen"
+            }
+          }
+        }
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Bauteillüfter"
+      },
+      "fan_aux": {
+        "name": "Zusatzlüfter"
+      },
+      "fan_box": {
+        "name": "Gehäuselüfter"
+      },
+      "fan_chamber": {
+        "name": "Kammerlüfter"
+      },
+      "fan_filter": {
+        "name": "Luftfilter"
+      },
+      "fan_exhaust": {
+        "name": "Abluft"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    },
+    "image": {
+      "model": {
+        "name": "Modell"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Licht"
+      },
+      "light_head": {
+        "name": "Kopflicht"
+      },
+      "light_camera": {
+        "name": "Kameralicht"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} Trocknungstemperatur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} Trocknungsdauer",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
     "sensor": {
       "status": {
         "name": "Status",
@@ -288,46 +401,6 @@
         }
       }
     },
-    "binary_sensor": {
-      "online": {
-        "name": "Online"
-      },
-      "printing": {
-        "name": "Druckt"
-      },
-      "problem": {
-        "name": "Problem",
-        "state_attributes": {
-          "error": {
-            "name": "Fehler"
-          }
-        }
-      }
-    },
-    "number": {
-      "box_dry_temperature": {
-        "name": "{box} Trocknungstemperatur",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      },
-      "box_dry_duration": {
-        "name": "{box} Trocknungsdauer",
-        "state_attributes": {
-          "box_id": {
-            "name": "Box"
-          },
-          "box": {
-            "name": "Box"
-          }
-        }
-      }
-    },
     "switch": {
       "box_drying": {
         "name": "{box} Trocknen",
@@ -348,69 +421,6 @@
             "name": "Dauer (min)"
           }
         }
-      }
-    },
-    "button": {
-      "pause": {
-        "name": "Druck pausieren"
-      },
-      "resume": {
-        "name": "Druck fortsetzen"
-      },
-      "cancel": {
-        "name": "Druck abbrechen"
-      }
-    },
-    "event": {
-      "print": {
-        "name": "Druck",
-        "state_attributes": {
-          "event_type": {
-            "state": {
-              "started": "Gestartet",
-              "finished": "Fertig",
-              "failed": "Fehlgeschlagen",
-              "cancelled": "Abgebrochen"
-            }
-          }
-        }
-      }
-    },
-    "light": {
-      "light_chamber": {
-        "name": "Licht"
-      },
-      "light_head": {
-        "name": "Kopflicht"
-      },
-      "light_camera": {
-        "name": "Kameralicht"
-      },
-      "light_other": {
-        "name": "{name}"
-      }
-    },
-    "fan": {
-      "fan_part": {
-        "name": "Bauteillüfter"
-      },
-      "fan_aux": {
-        "name": "Zusatzlüfter"
-      },
-      "fan_box": {
-        "name": "Gehäuselüfter"
-      },
-      "fan_chamber": {
-        "name": "Kammerlüfter"
-      },
-      "fan_filter": {
-        "name": "Luftfilter"
-      },
-      "fan_exhaust": {
-        "name": "Abluft"
-      },
-      "fan_other": {
-        "name": "{name}"
       }
     }
   },

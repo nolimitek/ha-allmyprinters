@@ -20,8 +20,8 @@ from .entity import agent_device, agent_identifier, printer_identifier
 
 _LOGGER = logging.getLogger(__name__)
 PLATFORMS: list[Platform] = [
-    Platform.BINARY_SENSOR, Platform.BUTTON, Platform.EVENT, Platform.FAN, Platform.LIGHT, Platform.NUMBER,
-    Platform.SENSOR, Platform.SWITCH,
+    Platform.BINARY_SENSOR, Platform.BUTTON, Platform.CAMERA, Platform.EVENT, Platform.FAN, Platform.IMAGE, Platform.LIGHT,
+    Platform.NUMBER, Platform.SENSOR, Platform.SWITCH,
 ]
 CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 CARD_URL = "/allmyprinters/allmyprinters-card.js"

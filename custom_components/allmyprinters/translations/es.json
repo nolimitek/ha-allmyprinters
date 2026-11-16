@@ -57,6 +57,119 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "En línea"
+      },
+      "printing": {
+        "name": "Imprimiendo"
+      },
+      "problem": {
+        "name": "Problema",
+        "state_attributes": {
+          "error": {
+            "name": "Error"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Pausar impresión"
+      },
+      "resume": {
+        "name": "Reanudar impresión"
+      },
+      "cancel": {
+        "name": "Cancelar impresión"
+      }
+    },
+    "camera": {
+      "camera": {
+        "name": "Cámara"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Impresión",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Iniciada",
+              "finished": "Terminada",
+              "failed": "Fallida",
+              "cancelled": "Cancelada"
+            }
+          }
+        }
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Ventilador de capa"
+      },
+      "fan_aux": {
+        "name": "Ventilador auxiliar"
+      },
+      "fan_box": {
+        "name": "Ventilador de la carcasa"
+      },
+      "fan_chamber": {
+        "name": "Ventilador de la cámara"
+      },
+      "fan_filter": {
+        "name": "Filtro de aire"
+      },
+      "fan_exhaust": {
+        "name": "Extracción"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    },
+    "image": {
+      "model": {
+        "name": "Modelo"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Luz"
+      },
+      "light_head": {
+        "name": "Luz del cabezal"
+      },
+      "light_camera": {
+        "name": "Luz de la webcam"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} temperatura de secado",
+        "state_attributes": {
+          "box_id": {
+            "name": "Caja"
+          },
+          "box": {
+            "name": "Caja"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} duración del secado",
+        "state_attributes": {
+          "box_id": {
+            "name": "Caja"
+          },
+          "box": {
+            "name": "Caja"
+          }
+        }
+      }
+    },
     "sensor": {
       "status": {
         "name": "Estado",
@@ -288,46 +401,6 @@
         }
       }
     },
-    "binary_sensor": {
-      "online": {
-        "name": "En línea"
-      },
-      "printing": {
-        "name": "Imprimiendo"
-      },
-      "problem": {
-        "name": "Problema",
-        "state_attributes": {
-          "error": {
-            "name": "Error"
-          }
-        }
-      }
-    },
-    "number": {
-      "box_dry_temperature": {
-        "name": "{box} temperatura de secado",
-        "state_attributes": {
-          "box_id": {
-            "name": "Caja"
-          },
-          "box": {
-            "name": "Caja"
-          }
-        }
-      },
-      "box_dry_duration": {
-        "name": "{box} duración del secado",
-        "state_attributes": {
-          "box_id": {
-            "name": "Caja"
-          },
-          "box": {
-            "name": "Caja"
-          }
-        }
-      }
-    },
     "switch": {
       "box_drying": {
         "name": "{box} secado",
@@ -348,69 +421,6 @@
             "name": "Duración (min)"
           }
         }
-      }
-    },
-    "button": {
-      "pause": {
-        "name": "Pausar impresión"
-      },
-      "resume": {
-        "name": "Reanudar impresión"
-      },
-      "cancel": {
-        "name": "Cancelar impresión"
-      }
-    },
-    "event": {
-      "print": {
-        "name": "Impresión",
-        "state_attributes": {
-          "event_type": {
-            "state": {
-              "started": "Iniciada",
-              "finished": "Terminada",
-              "failed": "Fallida",
-              "cancelled": "Cancelada"
-            }
-          }
-        }
-      }
-    },
-    "light": {
-      "light_chamber": {
-        "name": "Luz"
-      },
-      "light_head": {
-        "name": "Luz del cabezal"
-      },
-      "light_camera": {
-        "name": "Luz de la webcam"
-      },
-      "light_other": {
-        "name": "{name}"
-      }
-    },
-    "fan": {
-      "fan_part": {
-        "name": "Ventilador de capa"
-      },
-      "fan_aux": {
-        "name": "Ventilador auxiliar"
-      },
-      "fan_box": {
-        "name": "Ventilador de la carcasa"
-      },
-      "fan_chamber": {
-        "name": "Ventilador de la cámara"
-      },
-      "fan_filter": {
-        "name": "Filtro de aire"
-      },
-      "fan_exhaust": {
-        "name": "Extracción"
-      },
-      "fan_other": {
-        "name": "{name}"
       }
     }
   },
