@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1
+
+- The print view warns when the spool in a slot won’t last for a print (with a 5 g reserve). You can still print.
+
 ## 0.7.0
 
 - New card “Plan” in the settings. During the beta every feature is free; later the agent will be part of an AllMyPrinters subscription.
