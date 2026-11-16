@@ -1,0 +1,431 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "AllMyPrinters-agent koppelen",
+        "description": "Voer het adres van de AllMyPrinters-agent in en de sleutel uit zijn Instellingen → Home Assistant. Draait de agent als app AllMyPrinters Agent in Home Assistant, dan wordt hij automatisch gevonden onder Instellingen → Apparaten en diensten.",
+        "data": {
+          "host": "Host",
+          "port": "Poort",
+          "token": "Sleutel"
+        },
+        "data_description": {
+          "host": "IP-adres of hostnaam van de computer waarop de agent draait, bijv. 192.168.1.20.",
+          "port": "Poort van de webinterface van de agent (8090, tenzij je hem hebt gewijzigd).",
+          "token": "Begint met amp_ha_. Staat in de agent onder Instellingen → Home Assistant."
+        }
+      },
+      "hassio_confirm": {
+        "title": "App AllMyPrinters Agent gevonden",
+        "description": "De printers en spoelen van de app {addon} aan Home Assistant toevoegen?"
+      },
+      "reauth_confirm": {
+        "title": "Nieuwe sleutel invoeren",
+        "description": "De opgeslagen sleutel werkt niet meer voor de agent op {host} – waarschijnlijk is hij opnieuw aangemaakt. Kopieer de huidige sleutel in de agent onder Instellingen → Home Assistant.",
+        "data": {
+          "token": "Sleutel"
+        },
+        "data_description": {
+          "token": "Begint met amp_ha_. Staat in de agent onder Instellingen → Home Assistant."
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Deze sleutel is ongeldig. Kopieer hem opnieuw in de agent onder Instellingen → Home Assistant.",
+      "cannot_connect": "De agent is op dit adres niet bereikbaar. Controleer host en poort en of de agent draait."
+    },
+    "abort": {
+      "already_configured": "Deze agent is al ingesteld. Adres en sleutel zijn bijgewerkt.",
+      "reauth_successful": "De nieuwe sleutel is opgeslagen.",
+      "wrong_account": "Deze sleutel hoort bij een andere agent.",
+      "already_in_progress": "Deze agent wordt al ingesteld.",
+      "invalid_discovery_info": "De app AllMyPrinters Agent stuurde onvolledige verbindingsgegevens. Werk de app bij en start hem opnieuw."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opties",
+        "data": {
+          "scan_interval": "Update-interval"
+        },
+        "data_description": {
+          "scan_interval": "Hoe vaak Home Assistant de agent bevraagt (seconden). De agent zelf bevraagt de printers elke 15 seconden."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Gereed",
+          "printing": "Print",
+          "paused": "Gepauzeerd",
+          "error": "Fout",
+          "offline": "Offline"
+        },
+        "state_attributes": {
+          "error": {
+            "name": "Fout"
+          },
+          "provider": {
+            "name": "Koppeling"
+          },
+          "last_update": {
+            "name": "Laatste update"
+          }
+        }
+      },
+      "progress": {
+        "name": "Voortgang"
+      },
+      "remaining_time": {
+        "name": "Resterende tijd"
+      },
+      "end_time": {
+        "name": "Verwacht einde"
+      },
+      "job_name": {
+        "name": "Printopdracht"
+      },
+      "current_layer": {
+        "name": "Huidige laag",
+        "state_attributes": {
+          "total_layers": {
+            "name": "Totaal lagen"
+          }
+        }
+      },
+      "nozzle_temperature": {
+        "name": "Nozzletemperatuur"
+      },
+      "bed_temperature": {
+        "name": "Bedtemperatuur"
+      },
+      "slot": {
+        "name": "Sleuf {slot}",
+        "state_attributes": {
+          "slot": {
+            "name": "Sleuf"
+          },
+          "index": {
+            "name": "Index"
+          },
+          "material": {
+            "name": "Materiaal"
+          },
+          "color": {
+            "name": "Kleur"
+          },
+          "spool_id": {
+            "name": "Spoel-ID"
+          },
+          "spool_name": {
+            "name": "Spoel"
+          },
+          "brand": {
+            "name": "Merk"
+          },
+          "remaining_percent": {
+            "name": "Resterend (%)"
+          },
+          "spool_weight": {
+            "name": "Spoelgewicht"
+          }
+        }
+      },
+      "spool": {
+        "name": "{spool}",
+        "state_attributes": {
+          "spool_id": {
+            "name": "Spoel-ID"
+          },
+          "spool_name": {
+            "name": "Spoel"
+          },
+          "brand": {
+            "name": "Merk"
+          },
+          "material": {
+            "name": "Materiaal"
+          },
+          "color": {
+            "name": "Kleur"
+          },
+          "remaining_percent": {
+            "name": "Resterend (%)"
+          },
+          "spool_weight": {
+            "name": "Spoelgewicht"
+          },
+          "location": {
+            "name": "Opslaglocatie"
+          },
+          "printer": {
+            "name": "Printer"
+          },
+          "slot": {
+            "name": "Sleuf"
+          },
+          "dry_due": {
+            "name": "Moet gedroogd worden"
+          },
+          "days_open": {
+            "name": "Dagen sinds openen of drogen"
+          },
+          "level": {
+            "name": "Niveau",
+            "state": {
+              "ok": "OK",
+              "low": "Laag",
+              "critical": "Kritiek"
+            }
+          }
+        }
+      },
+      "box_temperature": {
+        "name": "{box} temperatuur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_humidity": {
+        "name": "{box} luchtvochtigheid",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_remaining": {
+        "name": "{box} droogtijd resterend",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "drying": {
+            "name": "Droogt"
+          },
+          "target_temperature": {
+            "name": "Doeltemperatuur"
+          },
+          "duration": {
+            "name": "Duur"
+          },
+          "controllable": {
+            "name": "Bestuurbaar"
+          }
+        }
+      },
+      "spools": {
+        "name": "Spoelen op voorraad"
+      },
+      "filament_stock": {
+        "name": "Filament op voorraad"
+      },
+      "low_spools": {
+        "name": "Spoelen bijna leeg",
+        "state_attributes": {
+          "threshold_g": {
+            "name": "Drempel (g)"
+          },
+          "spools": {
+            "name": "Spoelen"
+          }
+        }
+      },
+      "total_prints": {
+        "name": "Prints totaal"
+      },
+      "total_print_time": {
+        "name": "Printtijd totaal"
+      },
+      "filament_printed": {
+        "name": "Filament geprint",
+        "state_attributes": {
+          "prints": {
+            "name": "Prints"
+          }
+        }
+      },
+      "month_cost": {
+        "name": "Printkosten deze maand",
+        "state_attributes": {
+          "filament": {
+            "name": "Filament"
+          },
+          "operating": {
+            "name": "Stroom en slijtage"
+          },
+          "prints": {
+            "name": "Prints"
+          },
+          "grams": {
+            "name": "Filament (g)"
+          }
+        }
+      },
+      "spools_to_dry": {
+        "name": "Spoelen om te drogen",
+        "state_attributes": {
+          "spools": {
+            "name": "Spoelen"
+          }
+        }
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "Print"
+      },
+      "problem": {
+        "name": "Probleem",
+        "state_attributes": {
+          "error": {
+            "name": "Fout"
+          }
+        }
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} droogtemperatuur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} droogduur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
+    "switch": {
+      "box_drying": {
+        "name": "{box} drogen",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "target_temperature": {
+            "name": "Doeltemperatuur"
+          },
+          "remaining_minutes": {
+            "name": "Resterend (min)"
+          },
+          "duration_minutes": {
+            "name": "Duur (min)"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Print pauzeren"
+      },
+      "resume": {
+        "name": "Print hervatten"
+      },
+      "cancel": {
+        "name": "Print annuleren"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Print",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Gestart",
+              "finished": "Klaar",
+              "failed": "Mislukt",
+              "cancelled": "Geannuleerd"
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Licht"
+      },
+      "light_head": {
+        "name": "Kopverlichting"
+      },
+      "light_camera": {
+        "name": "Cameralicht"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Onderdeelventilator"
+      },
+      "fan_aux": {
+        "name": "Hulpventilator"
+      },
+      "fan_box": {
+        "name": "Behuizingventilator"
+      },
+      "fan_chamber": {
+        "name": "Kamerventilator"
+      },
+      "fan_filter": {
+        "name": "Luchtfilter"
+      },
+      "fan_exhaust": {
+        "name": "Afzuiging"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "De sleutel voor de AllMyPrinters-agent is niet meer geldig."
+    },
+    "update_failed": {
+      "message": "De AllMyPrinters-agent is niet bereikbaar ({error})."
+    },
+    "command_failed": {
+      "message": "De printer heeft de opdracht niet geaccepteerd ({error})."
+    },
+    "print_only": {
+      "message": "Deze ventilator kan alleen tijdens het printen worden ingesteld."
+    }
+  }
+}

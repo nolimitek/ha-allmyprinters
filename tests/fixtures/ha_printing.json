@@ -1,0 +1,216 @@
+{
+ "v": 1,
+ "account": {
+  "id": "09cc8fa48baf",
+  "name": "AllMyPrinters Agent"
+ },
+ "agent": {
+  "id": "09cc8fa48baf",
+  "version": "0.5.7",
+  "app": false
+ },
+ "printers": [
+  {
+   "id": "p1",
+   "provider": "moonraker",
+   "brand": "Anycubic",
+   "name": "Kobra S1",
+   "model": "Anycubic Kobra S1",
+   "fw": "v0.12.0",
+   "image": null,
+   "image_own": false,
+   "online": true,
+   "state": "printing",
+   "error": null,
+   "nozzle": 220,
+   "bed": 60,
+   "job": {
+    "title": "benchy",
+    "progress": 60,
+    "remain_min": 12,
+    "end_at": "2026-11-16T08:40:47Z",
+    "layer": 72,
+    "layers": 120
+   },
+   "slots": [
+    {
+     "index": 0,
+     "label": "1",
+     "material": "PLA",
+     "color": "#ff0000",
+     "spool": {
+      "id": 1,
+      "name": "Elegoo PLA",
+      "brand": "Elegoo",
+      "material": "PLA",
+      "color": "#3366ff",
+      "left": 1000,
+      "total": 1000,
+      "pct": 100,
+      "value": null,
+      "location": null,
+      "lvl": 0,
+      "dry": null,
+      "loaded": {
+       "printer": "Kobra S1",
+       "slot": "1"
+      }
+     },
+     "remain_pct": null,
+     "in_use": true
+    },
+    {
+     "index": 1,
+     "label": "2",
+     "material": "PLA",
+     "color": "#00aa00",
+     "spool": null,
+     "remain_pct": null,
+     "in_use": false
+    },
+    {
+     "index": 2,
+     "label": "3",
+     "material": "PETG",
+     "color": "#ffffff",
+     "spool": null,
+     "remain_pct": null,
+     "in_use": false
+    },
+    {
+     "index": 3,
+     "label": "4",
+     "material": null,
+     "color": null,
+     "spool": null,
+     "remain_pct": null,
+     "in_use": false
+    }
+   ],
+   "boxes": [
+    {
+     "id": 0,
+     "label": "ACE 1",
+     "control": true,
+     "temp": 26,
+     "humidity": 38,
+     "drying": false,
+     "dry_target": null,
+     "dry_remain_min": null,
+     "dry_duration_min": null
+    }
+   ],
+   "control": true,
+   "ctl": {
+    "fans": [
+     {
+      "id": "fan",
+      "k": "part",
+      "name": null,
+      "pct": 0,
+      "set": true
+     },
+     {
+      "id": "fan_generic air_filter_fan",
+      "k": "filter",
+      "name": "air_filter_fan",
+      "pct": 60,
+      "set": true
+     },
+     {
+      "id": "fan_generic box_fan",
+      "k": "box",
+      "name": "box_fan",
+      "pct": 0,
+      "set": true
+     }
+    ],
+    "lights": [
+     {
+      "id": "power:chamber_light",
+      "k": "chamber",
+      "name": "chamber_light",
+      "on": true
+     }
+    ]
+   },
+   "counters": {
+    "prints": 108,
+    "hours": 400
+   },
+   "maint": null,
+   "last_job": {
+    "id": 2,
+    "title": "benchy",
+    "status": "printing",
+    "how": null,
+    "start": "2026-11-16T08:28:30Z",
+    "end": null,
+    "grams": null
+   },
+   "updated": "2026-11-16T08:28:43Z"
+  }
+ ],
+ "spools": {
+  "count": 2,
+  "left_g": 2000,
+  "value": 0,
+  "low_g": 100,
+  "low": [],
+  "items": [
+   {
+    "id": 2,
+    "name": "Sunlu PETG",
+    "brand": "Sunlu",
+    "material": "PETG",
+    "color": "#222222",
+    "left": 1000,
+    "total": 1000,
+    "pct": 100,
+    "value": null,
+    "location": null,
+    "lvl": 0,
+    "dry": null,
+    "loaded": null
+   },
+   {
+    "id": 1,
+    "name": "Elegoo PLA",
+    "brand": "Elegoo",
+    "material": "PLA",
+    "color": "#3366ff",
+    "left": 1000,
+    "total": 1000,
+    "pct": 100,
+    "value": null,
+    "location": null,
+    "lvl": 0,
+    "dry": null,
+    "loaded": {
+     "printer": "Kobra S1",
+     "slot": "1"
+    }
+   }
+  ],
+  "dry_due": []
+ },
+ "usage": {
+  "filament_g": 0,
+  "prints": 0,
+  "month": {
+   "start": "2026-11-01T00:00:00Z",
+   "prints": 0,
+   "grams": 0,
+   "material": 0,
+   "run": null,
+   "cost": 0,
+   "currency": "EUR"
+  }
+ },
+ "features": {
+  "panel": false,
+  "light": true,
+  "fan": true
+ },
+ "time": "2026-11-16T08:28:47Z"
+}

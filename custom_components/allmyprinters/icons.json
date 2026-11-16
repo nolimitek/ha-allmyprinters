@@ -1,0 +1,173 @@
+{
+  "entity": {
+    "sensor": {
+      "status": {
+        "default": "mdi:printer-3d",
+        "state": {
+          "printing": "mdi:printer-3d-nozzle",
+          "paused": "mdi:pause-circle-outline",
+          "error": "mdi:alert-circle-outline",
+          "offline": "mdi:printer-3d-off"
+        }
+      },
+      "progress": {
+        "default": "mdi:progress-clock"
+      },
+      "remaining_time": {
+        "default": "mdi:timer-sand"
+      },
+      "end_time": {
+        "default": "mdi:clock-end"
+      },
+      "job_name": {
+        "default": "mdi:file-cad"
+      },
+      "current_layer": {
+        "default": "mdi:layers-triple-outline"
+      },
+      "nozzle_temperature": {
+        "default": "mdi:printer-3d-nozzle-heat"
+      },
+      "bed_temperature": {
+        "default": "mdi:radiator"
+      },
+      "slot": {
+        "default": "mdi:printer-3d-nozzle-outline"
+      },
+      "spools": {
+        "default": "mdi:package-variant-closed"
+      },
+      "filament_stock": {
+        "default": "mdi:scale"
+      },
+      "spool": {
+        "default": "mdi:album"
+      },
+      "box_dry_remaining": {
+        "default": "mdi:timer-sand"
+      },
+      "low_spools": {
+        "default": "mdi:alert-outline"
+      },
+      "total_prints": {
+        "default": "mdi:counter"
+      },
+      "total_print_time": {
+        "default": "mdi:timer-outline"
+      },
+      "filament_printed": {
+        "default": "mdi:printer-3d-nozzle"
+      },
+      "month_cost": {
+        "default": "mdi:cash"
+      },
+      "spools_to_dry": {
+        "default": "mdi:tumble-dryer"
+      }
+    },
+    "binary_sensor": {
+      "printing": {
+        "default": "mdi:printer-3d-nozzle"
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "default": "mdi:thermometer"
+      },
+      "box_dry_duration": {
+        "default": "mdi:timer-outline"
+      }
+    },
+    "switch": {
+      "box_drying": {
+        "default": "mdi:heat-wave",
+        "state": {
+          "off": "mdi:tumble-dryer-off"
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "default": "mdi:pause"
+      },
+      "resume": {
+        "default": "mdi:play"
+      },
+      "cancel": {
+        "default": "mdi:stop"
+      }
+    },
+    "event": {
+      "print": {
+        "default": "mdi:printer-3d"
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "default": "mdi:lightbulb",
+        "state": {
+          "off": "mdi:lightbulb-outline"
+        }
+      },
+      "light_head": {
+        "default": "mdi:spotlight-beam",
+        "state": {
+          "off": "mdi:spotlight"
+        }
+      },
+      "light_camera": {
+        "default": "mdi:lightbulb",
+        "state": {
+          "off": "mdi:lightbulb-outline"
+        }
+      },
+      "light_other": {
+        "default": "mdi:lightbulb",
+        "state": {
+          "off": "mdi:lightbulb-outline"
+        }
+      }
+    },
+    "fan": {
+      "fan_aux": {
+        "default": "mdi:fan",
+        "state": {
+          "off": "mdi:fan-off"
+        }
+      },
+      "fan_box": {
+        "default": "mdi:fan",
+        "state": {
+          "off": "mdi:fan-off"
+        }
+      },
+      "fan_chamber": {
+        "default": "mdi:fan",
+        "state": {
+          "off": "mdi:fan-off"
+        }
+      },
+      "fan_exhaust": {
+        "default": "mdi:fan",
+        "state": {
+          "off": "mdi:fan-off"
+        }
+      },
+      "fan_filter": {
+        "default": "mdi:air-filter"
+      },
+      "fan_other": {
+        "default": "mdi:fan",
+        "state": {
+          "off": "mdi:fan-off"
+        }
+      },
+      "fan_part": {
+        "default": "mdi:fan",
+        "state": {
+          "off": "mdi:fan-off"
+        }
+      }
+    }
+  }
+}

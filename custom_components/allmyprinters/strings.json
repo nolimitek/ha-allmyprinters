@@ -1,0 +1,431 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect the AllMyPrinters agent",
+        "description": "Enter the address of the AllMyPrinters agent and the key from its Settings → Home Assistant. If the agent runs as the AllMyPrinters Agent app in Home Assistant, it is found automatically under Settings → Devices & services.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "token": "Key"
+        },
+        "data_description": {
+          "host": "IP address or host name of the computer running the agent, e.g. 192.168.1.20.",
+          "port": "Port of the agent's web interface (8090 unless you changed it).",
+          "token": "Starts with amp_ha_. Shown in the agent under Settings → Home Assistant."
+        }
+      },
+      "hassio_confirm": {
+        "title": "AllMyPrinters Agent app found",
+        "description": "Add the printers and spools of the {addon} app to Home Assistant?"
+      },
+      "reauth_confirm": {
+        "title": "Enter the new key",
+        "description": "The saved key no longer works for the agent at {host} – it was probably regenerated. Copy the current key from the agent under Settings → Home Assistant.",
+        "data": {
+          "token": "Key"
+        },
+        "data_description": {
+          "token": "Starts with amp_ha_. Shown in the agent under Settings → Home Assistant."
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "This key is not valid. Copy it again from the agent under Settings → Home Assistant.",
+      "cannot_connect": "Could not reach the agent at this address. Check host and port and that the agent is running."
+    },
+    "abort": {
+      "already_configured": "This agent is already set up. Its address and key have been updated.",
+      "reauth_successful": "The new key is saved.",
+      "wrong_account": "This key belongs to a different agent.",
+      "already_in_progress": "This agent is already being set up.",
+      "invalid_discovery_info": "The AllMyPrinters Agent app sent incomplete connection details. Update the app and restart it."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "scan_interval": "Update interval"
+        },
+        "data_description": {
+          "scan_interval": "How often Home Assistant asks the agent (seconds). The agent itself checks the printers every 15 seconds."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Idle",
+          "printing": "Printing",
+          "paused": "Paused",
+          "error": "Error",
+          "offline": "Offline"
+        },
+        "state_attributes": {
+          "error": {
+            "name": "Error"
+          },
+          "provider": {
+            "name": "Connection"
+          },
+          "last_update": {
+            "name": "Last update"
+          }
+        }
+      },
+      "progress": {
+        "name": "Progress"
+      },
+      "remaining_time": {
+        "name": "Remaining time"
+      },
+      "end_time": {
+        "name": "Estimated end"
+      },
+      "job_name": {
+        "name": "Job"
+      },
+      "current_layer": {
+        "name": "Current layer",
+        "state_attributes": {
+          "total_layers": {
+            "name": "Total layers"
+          }
+        }
+      },
+      "nozzle_temperature": {
+        "name": "Nozzle temperature"
+      },
+      "bed_temperature": {
+        "name": "Bed temperature"
+      },
+      "slot": {
+        "name": "Slot {slot}",
+        "state_attributes": {
+          "slot": {
+            "name": "Slot"
+          },
+          "index": {
+            "name": "Index"
+          },
+          "material": {
+            "name": "Material"
+          },
+          "color": {
+            "name": "Colour"
+          },
+          "spool_id": {
+            "name": "Spool ID"
+          },
+          "spool_name": {
+            "name": "Spool"
+          },
+          "brand": {
+            "name": "Brand"
+          },
+          "remaining_percent": {
+            "name": "Remaining (%)"
+          },
+          "spool_weight": {
+            "name": "Spool weight"
+          }
+        }
+      },
+      "spool": {
+        "name": "{spool}",
+        "state_attributes": {
+          "spool_id": {
+            "name": "Spool ID"
+          },
+          "spool_name": {
+            "name": "Spool"
+          },
+          "brand": {
+            "name": "Brand"
+          },
+          "material": {
+            "name": "Material"
+          },
+          "color": {
+            "name": "Colour"
+          },
+          "remaining_percent": {
+            "name": "Remaining (%)"
+          },
+          "spool_weight": {
+            "name": "Spool weight"
+          },
+          "location": {
+            "name": "Location"
+          },
+          "printer": {
+            "name": "Printer"
+          },
+          "slot": {
+            "name": "Slot"
+          },
+          "dry_due": {
+            "name": "Should be dried"
+          },
+          "days_open": {
+            "name": "Days since opened or dried"
+          },
+          "level": {
+            "name": "Level",
+            "state": {
+              "ok": "OK",
+              "low": "Low",
+              "critical": "Critical"
+            }
+          }
+        }
+      },
+      "box_temperature": {
+        "name": "{box} temperature",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_humidity": {
+        "name": "{box} humidity",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_remaining": {
+        "name": "{box} drying time remaining",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "drying": {
+            "name": "Drying"
+          },
+          "target_temperature": {
+            "name": "Target temperature"
+          },
+          "duration": {
+            "name": "Duration"
+          },
+          "controllable": {
+            "name": "Controllable"
+          }
+        }
+      },
+      "spools": {
+        "name": "Spools in stock"
+      },
+      "filament_stock": {
+        "name": "Filament in stock"
+      },
+      "low_spools": {
+        "name": "Spools almost empty",
+        "state_attributes": {
+          "threshold_g": {
+            "name": "Threshold (g)"
+          },
+          "spools": {
+            "name": "Spools"
+          }
+        }
+      },
+      "total_prints": {
+        "name": "Total prints"
+      },
+      "total_print_time": {
+        "name": "Total print time"
+      },
+      "filament_printed": {
+        "name": "Filament printed",
+        "state_attributes": {
+          "prints": {
+            "name": "Prints"
+          }
+        }
+      },
+      "month_cost": {
+        "name": "Print costs this month",
+        "state_attributes": {
+          "filament": {
+            "name": "Filament"
+          },
+          "operating": {
+            "name": "Electricity and wear"
+          },
+          "prints": {
+            "name": "Prints"
+          },
+          "grams": {
+            "name": "Filament (g)"
+          }
+        }
+      },
+      "spools_to_dry": {
+        "name": "Spools to dry",
+        "state_attributes": {
+          "spools": {
+            "name": "Spools"
+          }
+        }
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "Printing"
+      },
+      "problem": {
+        "name": "Problem",
+        "state_attributes": {
+          "error": {
+            "name": "Error"
+          }
+        }
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} drying temperature",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} drying duration",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
+    "switch": {
+      "box_drying": {
+        "name": "{box} drying",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "target_temperature": {
+            "name": "Target temperature"
+          },
+          "remaining_minutes": {
+            "name": "Remaining (min)"
+          },
+          "duration_minutes": {
+            "name": "Duration (min)"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Pause print"
+      },
+      "resume": {
+        "name": "Resume print"
+      },
+      "cancel": {
+        "name": "Cancel print"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Print",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Started",
+              "finished": "Finished",
+              "failed": "Failed",
+              "cancelled": "Cancelled"
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Light"
+      },
+      "light_head": {
+        "name": "Head light"
+      },
+      "light_camera": {
+        "name": "Camera light"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Part fan"
+      },
+      "fan_aux": {
+        "name": "Aux fan"
+      },
+      "fan_box": {
+        "name": "Enclosure fan"
+      },
+      "fan_chamber": {
+        "name": "Chamber fan"
+      },
+      "fan_filter": {
+        "name": "Air filter"
+      },
+      "fan_exhaust": {
+        "name": "Exhaust"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "The key for the AllMyPrinters agent is no longer valid."
+    },
+    "update_failed": {
+      "message": "Could not reach the AllMyPrinters agent ({error})."
+    },
+    "command_failed": {
+      "message": "The printer did not accept the command ({error})."
+    },
+    "print_only": {
+      "message": "This fan can only be changed while a print is running."
+    }
+  }
+}

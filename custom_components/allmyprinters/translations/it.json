@@ -1,0 +1,431 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Collega l’agente AllMyPrinters",
+        "description": "Inserisci l’indirizzo dell’agente AllMyPrinters e la chiave dalle sue Impostazioni → Home Assistant. Se l’agente funziona come app AllMyPrinters Agent in Home Assistant, viene trovato automaticamente in Impostazioni → Dispositivi e servizi.",
+        "data": {
+          "host": "Host",
+          "port": "Porta",
+          "token": "Chiave"
+        },
+        "data_description": {
+          "host": "Indirizzo IP o nome host del computer su cui funziona l’agente, ad es. 192.168.1.20.",
+          "port": "Porta dell’interfaccia web dell’agente (8090 se non l’hai cambiata).",
+          "token": "Inizia con amp_ha_. Si trova nell’agente in Impostazioni → Home Assistant."
+        }
+      },
+      "hassio_confirm": {
+        "title": "App AllMyPrinters Agent trovata",
+        "description": "Aggiungere a Home Assistant le stampanti e le bobine dell’app {addon}?"
+      },
+      "reauth_confirm": {
+        "title": "Inserisci la nuova chiave",
+        "description": "La chiave salvata non funziona più per l’agente su {host}: probabilmente è stata rigenerata. Copia la chiave attuale nell’agente in Impostazioni → Home Assistant.",
+        "data": {
+          "token": "Chiave"
+        },
+        "data_description": {
+          "token": "Inizia con amp_ha_. Si trova nell’agente in Impostazioni → Home Assistant."
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Questa chiave non è valida. Copiala di nuovo nell’agente in Impostazioni → Home Assistant.",
+      "cannot_connect": "Impossibile raggiungere l’agente a questo indirizzo. Controlla host, porta e che l’agente sia in funzione."
+    },
+    "abort": {
+      "already_configured": "Questo agente è già configurato. Indirizzo e chiave sono stati aggiornati.",
+      "reauth_successful": "La nuova chiave è stata salvata.",
+      "wrong_account": "Questa chiave appartiene a un altro agente.",
+      "already_in_progress": "Questo agente è già in fase di configurazione.",
+      "invalid_discovery_info": "L’app AllMyPrinters Agent ha inviato dati di connessione incompleti. Aggiorna l’app e riavviala."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni",
+        "data": {
+          "scan_interval": "Intervallo di aggiornamento"
+        },
+        "data_description": {
+          "scan_interval": "Ogni quanto Home Assistant interroga l’agente (secondi). L’agente interroga le stampanti ogni 15 secondi."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Stato",
+        "state": {
+          "idle": "Pronta",
+          "printing": "In stampa",
+          "paused": "In pausa",
+          "error": "Errore",
+          "offline": "Offline"
+        },
+        "state_attributes": {
+          "error": {
+            "name": "Errore"
+          },
+          "provider": {
+            "name": "Connessione"
+          },
+          "last_update": {
+            "name": "Ultimo aggiornamento"
+          }
+        }
+      },
+      "progress": {
+        "name": "Avanzamento"
+      },
+      "remaining_time": {
+        "name": "Tempo rimanente"
+      },
+      "end_time": {
+        "name": "Fine prevista"
+      },
+      "job_name": {
+        "name": "Lavoro"
+      },
+      "current_layer": {
+        "name": "Strato attuale",
+        "state_attributes": {
+          "total_layers": {
+            "name": "Strati totali"
+          }
+        }
+      },
+      "nozzle_temperature": {
+        "name": "Temperatura ugello"
+      },
+      "bed_temperature": {
+        "name": "Temperatura piatto"
+      },
+      "slot": {
+        "name": "Slot {slot}",
+        "state_attributes": {
+          "slot": {
+            "name": "Slot"
+          },
+          "index": {
+            "name": "Indice"
+          },
+          "material": {
+            "name": "Materiale"
+          },
+          "color": {
+            "name": "Colore"
+          },
+          "spool_id": {
+            "name": "ID bobina"
+          },
+          "spool_name": {
+            "name": "Bobina"
+          },
+          "brand": {
+            "name": "Marca"
+          },
+          "remaining_percent": {
+            "name": "Rimanente (%)"
+          },
+          "spool_weight": {
+            "name": "Peso bobina"
+          }
+        }
+      },
+      "spool": {
+        "name": "{spool}",
+        "state_attributes": {
+          "spool_id": {
+            "name": "ID bobina"
+          },
+          "spool_name": {
+            "name": "Bobina"
+          },
+          "brand": {
+            "name": "Marca"
+          },
+          "material": {
+            "name": "Materiale"
+          },
+          "color": {
+            "name": "Colore"
+          },
+          "remaining_percent": {
+            "name": "Rimanente (%)"
+          },
+          "spool_weight": {
+            "name": "Peso bobina"
+          },
+          "location": {
+            "name": "Posizione"
+          },
+          "printer": {
+            "name": "Stampante"
+          },
+          "slot": {
+            "name": "Slot"
+          },
+          "dry_due": {
+            "name": "Da asciugare"
+          },
+          "days_open": {
+            "name": "Giorni dall’apertura o dall’asciugatura"
+          },
+          "level": {
+            "name": "Livello",
+            "state": {
+              "ok": "OK",
+              "low": "Basso",
+              "critical": "Critico"
+            }
+          }
+        }
+      },
+      "box_temperature": {
+        "name": "{box} temperatura",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_humidity": {
+        "name": "{box} umidità",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_remaining": {
+        "name": "{box} essiccazione rimanente",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "drying": {
+            "name": "In essiccazione"
+          },
+          "target_temperature": {
+            "name": "Temperatura obiettivo"
+          },
+          "duration": {
+            "name": "Durata"
+          },
+          "controllable": {
+            "name": "Controllabile"
+          }
+        }
+      },
+      "spools": {
+        "name": "Bobine in magazzino"
+      },
+      "filament_stock": {
+        "name": "Filamento in magazzino"
+      },
+      "low_spools": {
+        "name": "Bobine quasi vuote",
+        "state_attributes": {
+          "threshold_g": {
+            "name": "Soglia (g)"
+          },
+          "spools": {
+            "name": "Bobine"
+          }
+        }
+      },
+      "total_prints": {
+        "name": "Stampe totali"
+      },
+      "total_print_time": {
+        "name": "Tempo di stampa totale"
+      },
+      "filament_printed": {
+        "name": "Filamento stampato",
+        "state_attributes": {
+          "prints": {
+            "name": "Stampe"
+          }
+        }
+      },
+      "month_cost": {
+        "name": "Costi di stampa questo mese",
+        "state_attributes": {
+          "filament": {
+            "name": "Filamento"
+          },
+          "operating": {
+            "name": "Elettricità e usura"
+          },
+          "prints": {
+            "name": "Stampe"
+          },
+          "grams": {
+            "name": "Filamento (g)"
+          }
+        }
+      },
+      "spools_to_dry": {
+        "name": "Bobine da asciugare",
+        "state_attributes": {
+          "spools": {
+            "name": "Bobine"
+          }
+        }
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "In stampa"
+      },
+      "problem": {
+        "name": "Problema",
+        "state_attributes": {
+          "error": {
+            "name": "Errore"
+          }
+        }
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} temperatura di essiccazione",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} durata essiccazione",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
+    "switch": {
+      "box_drying": {
+        "name": "{box} essiccazione",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "target_temperature": {
+            "name": "Temperatura obiettivo"
+          },
+          "remaining_minutes": {
+            "name": "Rimanente (min)"
+          },
+          "duration_minutes": {
+            "name": "Durata (min)"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Metti in pausa"
+      },
+      "resume": {
+        "name": "Riprendi stampa"
+      },
+      "cancel": {
+        "name": "Annulla stampa"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Stampa",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Avviata",
+              "finished": "Completata",
+              "failed": "Fallita",
+              "cancelled": "Annullata"
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Luce"
+      },
+      "light_head": {
+        "name": "Luce della testina"
+      },
+      "light_camera": {
+        "name": "Luce della webcam"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Ventola pezzo"
+      },
+      "fan_aux": {
+        "name": "Ventola ausiliaria"
+      },
+      "fan_box": {
+        "name": "Ventola del case"
+      },
+      "fan_chamber": {
+        "name": "Ventola della camera"
+      },
+      "fan_filter": {
+        "name": "Filtro aria"
+      },
+      "fan_exhaust": {
+        "name": "Estrazione"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "La chiave dell’agente AllMyPrinters non è più valida."
+    },
+    "update_failed": {
+      "message": "Impossibile raggiungere l’agente AllMyPrinters ({error})."
+    },
+    "command_failed": {
+      "message": "La stampante non ha accettato il comando ({error})."
+    },
+    "print_only": {
+      "message": "Questa ventola si può regolare solo durante una stampa."
+    }
+  }
+}

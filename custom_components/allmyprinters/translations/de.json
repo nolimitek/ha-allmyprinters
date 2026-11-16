@@ -1,0 +1,431 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "AllMyPrinters-Agent verbinden",
+        "description": "Gib die Adresse des AllMyPrinters-Agenten und den Schlüssel aus seinen Einstellungen → Home Assistant ein. Läuft der Agent als App „AllMyPrinters Agent“ in Home Assistant, wird er unter Einstellungen → Geräte & Dienste automatisch gefunden.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "token": "Schlüssel"
+        },
+        "data_description": {
+          "host": "IP-Adresse oder Hostname des Rechners, auf dem der Agent läuft, z. B. 192.168.1.20.",
+          "port": "Port der Weboberfläche des Agenten (8090, sofern du ihn nicht geändert hast).",
+          "token": "Beginnt mit amp_ha_. Steht im Agenten unter Einstellungen → Home Assistant."
+        }
+      },
+      "hassio_confirm": {
+        "title": "App „AllMyPrinters Agent“ gefunden",
+        "description": "Drucker und Spulen der App {addon} zu Home Assistant hinzufügen?"
+      },
+      "reauth_confirm": {
+        "title": "Neuen Schlüssel eingeben",
+        "description": "Der gespeicherte Schlüssel funktioniert für den Agenten unter {host} nicht mehr – vermutlich wurde er neu erzeugt. Kopiere den aktuellen Schlüssel im Agenten unter Einstellungen → Home Assistant.",
+        "data": {
+          "token": "Schlüssel"
+        },
+        "data_description": {
+          "token": "Beginnt mit amp_ha_. Steht im Agenten unter Einstellungen → Home Assistant."
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Dieser Schlüssel ist ungültig. Kopiere ihn erneut im Agenten unter Einstellungen → Home Assistant.",
+      "cannot_connect": "Der Agent ist unter dieser Adresse nicht erreichbar. Prüfe Host und Port und ob der Agent läuft."
+    },
+    "abort": {
+      "already_configured": "Dieser Agent ist bereits eingerichtet. Adresse und Schlüssel wurden aktualisiert.",
+      "reauth_successful": "Der neue Schlüssel ist gespeichert.",
+      "wrong_account": "Dieser Schlüssel gehört zu einem anderen Agenten.",
+      "already_in_progress": "Dieser Agent wird bereits eingerichtet.",
+      "invalid_discovery_info": "Die App „AllMyPrinters Agent“ hat unvollständige Verbindungsdaten gesendet. Aktualisiere die App und starte sie neu."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "scan_interval": "Wie oft Home Assistant beim Agenten nachfragt (Sekunden). Der Agent selbst fragt die Drucker alle 15 Sekunden ab."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Bereit",
+          "printing": "Druckt",
+          "paused": "Pausiert",
+          "error": "Fehler",
+          "offline": "Offline"
+        },
+        "state_attributes": {
+          "error": {
+            "name": "Fehler"
+          },
+          "provider": {
+            "name": "Anbindung"
+          },
+          "last_update": {
+            "name": "Letzte Aktualisierung"
+          }
+        }
+      },
+      "progress": {
+        "name": "Fortschritt"
+      },
+      "remaining_time": {
+        "name": "Restzeit"
+      },
+      "end_time": {
+        "name": "Voraussichtliches Ende"
+      },
+      "job_name": {
+        "name": "Druckauftrag"
+      },
+      "current_layer": {
+        "name": "Aktuelle Schicht",
+        "state_attributes": {
+          "total_layers": {
+            "name": "Schichten gesamt"
+          }
+        }
+      },
+      "nozzle_temperature": {
+        "name": "Düsentemperatur"
+      },
+      "bed_temperature": {
+        "name": "Betttemperatur"
+      },
+      "slot": {
+        "name": "Fach {slot}",
+        "state_attributes": {
+          "slot": {
+            "name": "Fach"
+          },
+          "index": {
+            "name": "Index"
+          },
+          "material": {
+            "name": "Material"
+          },
+          "color": {
+            "name": "Farbe"
+          },
+          "spool_id": {
+            "name": "Spulen-ID"
+          },
+          "spool_name": {
+            "name": "Spule"
+          },
+          "brand": {
+            "name": "Marke"
+          },
+          "remaining_percent": {
+            "name": "Rest (%)"
+          },
+          "spool_weight": {
+            "name": "Spulengewicht"
+          }
+        }
+      },
+      "spool": {
+        "name": "{spool}",
+        "state_attributes": {
+          "spool_id": {
+            "name": "Spulen-ID"
+          },
+          "spool_name": {
+            "name": "Spule"
+          },
+          "brand": {
+            "name": "Marke"
+          },
+          "material": {
+            "name": "Material"
+          },
+          "color": {
+            "name": "Farbe"
+          },
+          "remaining_percent": {
+            "name": "Rest (%)"
+          },
+          "spool_weight": {
+            "name": "Spulengewicht"
+          },
+          "location": {
+            "name": "Lagerort"
+          },
+          "printer": {
+            "name": "Drucker"
+          },
+          "slot": {
+            "name": "Fach"
+          },
+          "dry_due": {
+            "name": "Sollte getrocknet werden"
+          },
+          "days_open": {
+            "name": "Tage seit Öffnen oder Trocknen"
+          },
+          "level": {
+            "name": "Füllstand",
+            "state": {
+              "ok": "OK",
+              "low": "Niedrig",
+              "critical": "Kritisch"
+            }
+          }
+        }
+      },
+      "box_temperature": {
+        "name": "{box} Temperatur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_humidity": {
+        "name": "{box} Luftfeuchtigkeit",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_remaining": {
+        "name": "{box} Trocknung Restzeit",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "drying": {
+            "name": "Trocknet"
+          },
+          "target_temperature": {
+            "name": "Zieltemperatur"
+          },
+          "duration": {
+            "name": "Dauer"
+          },
+          "controllable": {
+            "name": "Steuerbar"
+          }
+        }
+      },
+      "spools": {
+        "name": "Spulen im Lager"
+      },
+      "filament_stock": {
+        "name": "Filament im Lager"
+      },
+      "low_spools": {
+        "name": "Spulen fast leer",
+        "state_attributes": {
+          "threshold_g": {
+            "name": "Schwelle (g)"
+          },
+          "spools": {
+            "name": "Spulen"
+          }
+        }
+      },
+      "total_prints": {
+        "name": "Drucke gesamt"
+      },
+      "total_print_time": {
+        "name": "Druckzeit gesamt"
+      },
+      "filament_printed": {
+        "name": "Filament verdruckt",
+        "state_attributes": {
+          "prints": {
+            "name": "Drucke"
+          }
+        }
+      },
+      "month_cost": {
+        "name": "Druckkosten diesen Monat",
+        "state_attributes": {
+          "filament": {
+            "name": "Filament"
+          },
+          "operating": {
+            "name": "Strom und Verschleiß"
+          },
+          "prints": {
+            "name": "Drucke"
+          },
+          "grams": {
+            "name": "Filament (g)"
+          }
+        }
+      },
+      "spools_to_dry": {
+        "name": "Spulen zum Trocknen",
+        "state_attributes": {
+          "spools": {
+            "name": "Spulen"
+          }
+        }
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "printing": {
+        "name": "Druckt"
+      },
+      "problem": {
+        "name": "Problem",
+        "state_attributes": {
+          "error": {
+            "name": "Fehler"
+          }
+        }
+      }
+    },
+    "number": {
+      "box_dry_temperature": {
+        "name": "{box} Trocknungstemperatur",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      },
+      "box_dry_duration": {
+        "name": "{box} Trocknungsdauer",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          }
+        }
+      }
+    },
+    "switch": {
+      "box_drying": {
+        "name": "{box} Trocknen",
+        "state_attributes": {
+          "box_id": {
+            "name": "Box"
+          },
+          "box": {
+            "name": "Box"
+          },
+          "target_temperature": {
+            "name": "Zieltemperatur"
+          },
+          "remaining_minutes": {
+            "name": "Rest (min)"
+          },
+          "duration_minutes": {
+            "name": "Dauer (min)"
+          }
+        }
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Druck pausieren"
+      },
+      "resume": {
+        "name": "Druck fortsetzen"
+      },
+      "cancel": {
+        "name": "Druck abbrechen"
+      }
+    },
+    "event": {
+      "print": {
+        "name": "Druck",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "started": "Gestartet",
+              "finished": "Fertig",
+              "failed": "Fehlgeschlagen",
+              "cancelled": "Abgebrochen"
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "light_chamber": {
+        "name": "Licht"
+      },
+      "light_head": {
+        "name": "Kopflicht"
+      },
+      "light_camera": {
+        "name": "Kameralicht"
+      },
+      "light_other": {
+        "name": "{name}"
+      }
+    },
+    "fan": {
+      "fan_part": {
+        "name": "Bauteillüfter"
+      },
+      "fan_aux": {
+        "name": "Zusatzlüfter"
+      },
+      "fan_box": {
+        "name": "Gehäuselüfter"
+      },
+      "fan_chamber": {
+        "name": "Kammerlüfter"
+      },
+      "fan_filter": {
+        "name": "Luftfilter"
+      },
+      "fan_exhaust": {
+        "name": "Abluft"
+      },
+      "fan_other": {
+        "name": "{name}"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "Der Schlüssel für den AllMyPrinters-Agenten ist nicht mehr gültig."
+    },
+    "update_failed": {
+      "message": "Der AllMyPrinters-Agent ist nicht erreichbar ({error})."
+    },
+    "command_failed": {
+      "message": "Der Drucker hat den Befehl nicht angenommen ({error})."
+    },
+    "print_only": {
+      "message": "Diesen Lüfter kann man nur während eines Drucks einstellen."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+configuration:
+  language:
+    name: Language
+    description: Language of notifications and texts the agent writes itself. The web interface follows your browser.
+  remote_access:
+    name: Access from anywhere
+    description: Paired phones and browsers can reach the agent when you are away (end-to-end encrypted through allmyprinters.com). Turn off to use it only at home.
+  password:
+    name: Password for direct access
+    description: Optional. Asked when you open the agent directly at http://<home-assistant>:8090 instead of the Home Assistant sidebar.
