@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.2
+
+- Spools you assign to a slot are also set on the printer (Bambu Lab AMS, Elegoo Centauri Carbon 2). Bambu spools with an RFID tag are left alone; can be switched off in the settings.
+- More reliable printing on Flashforge AD5X/Creator 5 (multi-colour), Bambu Lab, Elegoo Centauri Carbon 2 and Creality.
+
 ## 0.7.1
 
 - The print view warns when the spool in a slot won’t last for a print (with a 5 g reserve). You can still print.
