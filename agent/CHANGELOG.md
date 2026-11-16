@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0
+
+- New card “Plan” in the settings. During the beta every feature is free; later the agent will be part of an AllMyPrinters subscription.
+
 ## 0.6.2
 
 - The app's log is in English now.
