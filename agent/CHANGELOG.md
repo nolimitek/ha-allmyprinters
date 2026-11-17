@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.2
+
+- Tidier settings: six groups you can open and close; only one is open at a time.
+
 ## 0.8.1
 
 - Settings → Monitoring links straight to the setup guide for the detection service and says when it can’t be reached.
