@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.3
+
+- After a job sliced on the AllMyPrinters server is sent to a printer, the agent reports anonymously whether the printer started or which error came up (printer type, model, firmware, number of colours; no file, address or ID). It helps us find printers that still cause trouble. Nothing is sent with your own slicer; switch it off under Settings → Slicer.
+- Anycubic ACE: an emptied slot no longer shows the material and colour of the last spool.
+
 ## 0.7.2
 
 - Spools you assign to a slot are also set on the printer (Bambu Lab AMS, Elegoo Centauri Carbon 2). Bambu spools with an RFID tag are left alone; can be switched off in the settings.
