@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1
+
+- Settings → Monitoring links straight to the setup guide for the detection service and says when it can’t be reached.
+
 ## 0.8.0
 
 - New card **Monitoring** in the settings: before every print the agent compares the camera image with a picture of the empty plate and asks first if something still seems to be on it.
