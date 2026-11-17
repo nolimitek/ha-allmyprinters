@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.3
+
+- Models: new “Just added” list below “Trending now” – the newest models as a grid, with “Load more”.
+- Warns when your own slicer container runs 1.0.4–1.0.7: with those versions Bambu Lab printers don't load filament from the AMS. Update the container to 1.0.8.
+
 ## 0.8.2
 
 - Tidier settings: six groups you can open and close; only one is open at a time.
