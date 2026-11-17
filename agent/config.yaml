@@ -1,5 +1,5 @@
 name: AllMyPrinters Agent
-version: "0.7.4"
+version: "0.8.0"
 slug: allmyprinters_agent
 description: Your 3D printers, spools and filament boxes in one place, running inside Home Assistant.
 url: https://github.com/nolimitek/ha-allmyprinters/tree/main/agent
