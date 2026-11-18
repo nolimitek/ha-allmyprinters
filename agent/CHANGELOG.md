@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0
+
+- Build plates from your library: select several STL models and tap “Onto one plate”, or add models in the print view with “From the library”. Each model keeps its own count and slot.
+- “Save as plate” keeps the combination as a library entry with a picture of its parts and its own print log; “Print” loads everything again.
+- Print preview: the whole print bed is visible at the start (surface, 25 mm grid, outline), the model at its real position.
+- Print preview: single-color prints in the color of the chosen slot, with a switch back to the line types.
+
 ## 0.8.4
 
 - Library on a NAS: if the NAS sends no data for 60 seconds, “Print” stops waiting and says so in the window (before: up to 5 minutes on “Loading file …”). The seconds count up while loading; a file that's gone from the NAS gets its own message.
