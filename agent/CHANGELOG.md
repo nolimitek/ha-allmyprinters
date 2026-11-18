@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.0
+
+- New library: views “Recently printed”, “Never printed”, “Multi-color” and “Plates” (sidebar on the computer, dropdown on the phone).
+- “Fits on”: pick a printer and the library shows which models fit on its bed.
+- “Print again”: your latest prints at the top of the library, one tap opens the model with the printer it was last printed on.
+- Quick actions on every card (“Print”, “Onto a plate”); model details show size, last print and whether it fits your printers.
+
 ## 0.9.0
 
 - Build plates from your library: select several STL models and tap “Onto one plate”, or add models in the print view with “From the library”. Each model keeps its own count and slot.
