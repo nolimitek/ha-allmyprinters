@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.4
+
+- Library on a NAS: if the NAS sends no data for 60 seconds, “Print” stops waiting and says so in the window (before: up to 5 minutes on “Loading file …”). The seconds count up while loading; a file that's gone from the NAS gets its own message.
+- Klipper printers that answer the start command late (e.g. Kobra S1 with Rinkhals): the agent checks for about 30 seconds whether the print runs, instead of once after 4 seconds.
+- Settings → About shows “AllMyPrinters Agent” with its version, and in the paired Android app the app's version too.
+
 ## 0.8.3
 
 - Models: new “Just added” list below “Trending now” – the newest models as a grid, with “Load more”.
