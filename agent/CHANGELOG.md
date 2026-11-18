@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0
+
+- Find models like on 3DSEARCH: a filter sidebar on the computer (platforms with checkboxes, sort, price, categories, your library), active filters as chips you can remove one by one.
+- Contests: running and past design contests from MakerWorld, Printables, Creality Cloud, NexPrint and MakerOnline with prizes, deadline and the submitted models – bookmark them or add them to a collection.
+- Model cards show platform, designer, likes, makes and tags, with “Bookmark” and “Add to collection” right on the card.
+- Printers: a clear “Turn on live view” button; on the computer the camera picture is smaller.
+- Includes the optional browser password (Settings → Agent → Password) from agent 0.10.2; in Home Assistant access goes through Ingress as before.
+
 ## 0.10.0
 
 - New library: views “Recently printed”, “Never printed”, “Multi-color” and “Plates” (sidebar on the computer, dropdown on the phone).
