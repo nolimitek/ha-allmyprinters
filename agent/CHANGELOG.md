@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.12.0
+
+- Edit plates: move, rotate, tilt, scale, mirror and copy parts on the print plate, lay a part on any face (tap it or let the app pick the best one).
+- Choose the slot per part on multi-color printers and supports per part (off, automatic, from plate only).
+- Warns when a part sticks out over the edge or parts overlap, and shows which of your other printers the plate also fits on.
+- “Slice & print” prints exactly this layout; saved plates keep it, so “Print” in the library repeats the same arrangement.
+
 ## 0.11.0
 
 - Find models like on 3DSEARCH: a filter sidebar on the computer (platforms with checkboxes, sort, price, categories, your library), active filters as chips you can remove one by one.
