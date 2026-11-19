@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.16.0
+
+- New look in the familiar 3DSEARCH colours and font: light grey, white cards, orange buttons.
+- Slots sit like spools on a shelf, and the progress bar of a running print takes the colour of the filament that is printing.
+- On a computer the menu moves into a sidebar on the left.
+- Calmer pages: printer status shown as a word, no extra sentence under every heading, a flat bar at the bottom on phones.
+- The Home Assistant side panel keeps its Home Assistant look.
+
 ## 0.15.0
 
 - More manufacturer accounts, view only: Anycubic, Creality, Elegoo and Prusa Connect join Bambu Lab under Printers → Add printer → “Through your manufacturer account”. Status, slots (ACE, CFS, CANVAS, MMU) and temperatures, finished prints are booked off your spools.
