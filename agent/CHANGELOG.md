@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.13.0
+
+- Edit 3MF files on the plate: the project keeps its colors, painting, modifiers and print settings. Move, rotate, copy or remove objects, switch to another plate of the file and choose which slot prints each color.
+- Add STL parts from the library or your device to a 3MF plate (Bambu Studio and OrcaSlicer projects).
+- “New plate”: start with an empty plate in the library or in the print view and add STL or 3MF files.
+- “Save as new file” keeps the edited 3MF in your library; the original stays unchanged.
+- Library: filter by file type (STL, 3MF, G-code). On the computer a filter sidebar like in the model search – views, file type, “fits on”, folders and tags; active filters as chips you can remove one by one.
+- Every model card shows its file type.
+- Plate editor: the filament slots sit in the left column, visible without scrolling.
+- Plate editor: the bed size stayed “unknown” after updating the slicer container; it is checked again after an hour.
+- “1 part” instead of “1 parts”.
+
 ## 0.12.1
 
 - Plate editor: parts now follow the mouse or finger while you drag them (before they only jumped to the new spot on release).
