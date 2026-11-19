@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.0
+
+- More manufacturer accounts, view only: Anycubic, Creality, Elegoo and Prusa Connect join Bambu Lab under Printers → Add printer → “Through your manufacturer account”. Status, slots (ACE, CFS, CANVAS, MMU) and temperatures, finished prints are booked off your spools.
+- No LAN mode needed, so the manufacturer’s app keeps working – including Anycubic’s AI detection. Printing and controlling stay with the manufacturer’s app; to print from AllMyPrinters, connect the printer on your home network.
+- Sign-in: Anycubic and Creality with the access key from their website, Elegoo and Prusa Connect with email and password (sent only to the manufacturer, not stored). The agent keeps just the access key on your computer.
+- Renewed access keys are saved right away, so a restart never logs you out.
+- Passwords are no longer trimmed when signing in.
+
 ## 0.14.0
 
 - Bambu Lab through your Bambu account (view only): under Printers → Add printer → “Through your manufacturer account”, sign in with your email and the code Bambu emails you – no password needed. Pick the printers from your account; they show live status, AMS slots and temperatures, and finished prints are booked off your spools.
