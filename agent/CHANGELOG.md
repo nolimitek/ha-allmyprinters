@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1
+
+- Plate editor: parts now follow the mouse or finger while you drag them (before they only jumped to the new spot on release).
+
 ## 0.12.0
 
 - Edit plates: move, rotate, tilt, scale, mirror and copy parts on the print plate, lay a part on any face (tap it or let the app pick the best one).
