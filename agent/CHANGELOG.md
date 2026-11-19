@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.1
+
+- When the computer running the agent blocks connections to your home network (firewall, antivirus or VPN), the printer card, the printer search and “Check address” now say so and explain what to change, instead of only “not reachable”.
+- On Windows the agent names the program that most likely blocks it (an active VPN, the firewall of your antivirus, or the Windows firewall itself) and whether Windows treats your Wi-Fi as “Public”. “Report a problem” includes this too.
+
 ## 0.13.0
 
 - Edit 3MF files on the plate: the project keeps its colors, painting, modifiers and print settings. Move, rotate, copy or remove objects, switch to another plate of the file and choose which slot prints each color.
