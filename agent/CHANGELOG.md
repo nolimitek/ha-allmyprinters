@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.14.0
+
+- Bambu Lab through your Bambu account (view only): under Printers → Add printer → “Through your manufacturer account”, sign in with your email and the code Bambu emails you – no password needed. Pick the printers from your account; they show live status, AMS slots and temperatures, and finished prints are booked off your spools.
+- No LAN mode or Developer mode needed, and Bambu Handy keeps working. Printing and controlling stay with Bambu Handy / Bambu Studio – for printing from AllMyPrinters, connect the printer on your home network instead.
+- The agent talks to Bambu directly from your home – your sign-in only goes to Bambu, the access key stays on your computer and isn’t part of backups.
+- Plate editor on the phone: the printer row no longer runs past the screen edge when the plate size is unknown.
+
 ## 0.13.1
 
 - When the computer running the agent blocks connections to your home network (firewall, antivirus or VPN), the printer card, the printer search and “Check address” now say so and explain what to change, instead of only “not reachable”.
