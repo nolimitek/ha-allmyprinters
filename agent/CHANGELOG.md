@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.18.2
+
+- Elegoo Centauri Carbon 2: the anonymous print start report now says whether “busy” came from the printer status, the upload or the start command.
+- Flashforge Creator 5 / 5 Pro: “Print” only uploaded the file, the printer did not start. The app now uploads first and then starts the print with the head assignment, the way the FlashForge app does.
+- Flashforge Creator 5 / 5 Pro: a print only counts as started (and filament is only deducted) once the printer really runs; otherwise you get a clear message.
+- “Report a problem”: send errors in the log now include the step and the error message (home network addresses removed).
+
 ## 0.18.1
 
 - On a computer: printers on the left; on the right, for each printer, “Controls” with fans, light and the filament box (drying) – open, above “Running low” and “Recently printed”.
