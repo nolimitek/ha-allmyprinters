@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.18.1
+
+- On a computer: printers on the left; on the right, for each printer, “Controls” with fans, light and the filament box (drying) – open, above “Running low” and “Recently printed”.
+- The camera button now sits right under the print, above the slots.
+
 ## 0.18.0
 
 - Maintenance: plan recurring tasks for each printer – due after print hours, kilograms of filament, a number of prints or days, whichever comes first. Counted from your real print history; eight templates to start with.
