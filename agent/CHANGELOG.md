@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.18.0
+
+- Maintenance: plan recurring tasks for each printer – due after print hours, kilograms of filament, a number of prints or days, whichever comes first. Counted from your real print history; eight templates to start with.
+- The printer card shows when maintenance is due or coming up; “Done” starts the count again and keeps a short history with your note.
+- With the agent: a notification on your phone when maintenance is due (can be switched off under Settings → Notifications).
+- On a computer, each printer card has a column on the right: the camera first, below it fans, light and the filament box – open, without tapping “Controls”.
+- Model search on a computer: areas start folded, like the platforms.
+
 ## 0.17.0
 
 - Back to the familiar teal look and app icon – with a tidier layout.
