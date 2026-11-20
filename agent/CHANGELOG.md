@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.17.0
+
+- Back to the familiar teal look and app icon – with a tidier layout.
+- Printers: the heading switches between overview, print jobs, library and adding a printer; Print sits right next to it.
+- The setup steps fold into one slim line that names the next step.
+- Each slot appears once, as a spool with material and grams – tap a slot without a spool to assign one.
+- Fans, light and the filament box (drying) sit behind “Controls”; the camera has its own button.
+- On a computer, printers sit side by side with “Running low” and “Recently printed” next to them, and the top menu is shorter (Statistics, Settings and Community under “More”).
+- Spools open as a list, with “+ Spool” next to the heading and the filter inside the search field.
+- Library: Upload next to the heading, storage below it; on phones, file type, fits-on, tags and sorting sit behind the filter button.
+- Model search: “Trending” as a grid instead of a swipe row, one small bookmark button per card, platforms folded on a computer.
+
 ## 0.16.0
 
 - New look in the familiar 3DSEARCH colours and font: light grey, white cards, orange buttons.
