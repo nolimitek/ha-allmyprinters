@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.19.0
+
+- Print speed: while a print is running, choose Silent, Standard, Sport or Ludicrous right in the app (Anycubic Kobra: three levels; Bambu Lab, Elegoo, Creality, Flashforge and Klipper printers: four).
+- Before printing: tick “Vibration compensation” (Anycubic LAN, Bambu Lab) and “Flow calibration” (Anycubic LAN, Bambu Lab, Flashforge AD5X and Creator 5). The app remembers your choice per printer.
+
 ## 0.18.2
 
 - Elegoo Centauri Carbon 2: the anonymous print start report now says whether “busy” came from the printer status, the upload or the start command.
