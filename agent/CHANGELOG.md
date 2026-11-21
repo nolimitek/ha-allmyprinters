@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.19.1
+
+- Elegoo Centauri Carbon 2: new switch “Level bed before printing” when printing from the app. Untick it to skip the full bed probing, the same as ElegooSlicer’s “Auto bed leveling” box. The app remembers your choice per printer.
+- Setup checklist: the spool steps are now marked “Optional” – printing works without setting up spools.
+- Elegoo Centauri Carbon 2: every print started from the app levelled the bed first, even with a saved bed mesh.
+- Setup checklist: “First print deducted” was ticked although nothing had been deducted from a spool yet.
+
 ## 0.19.0
 
 - Print speed: while a print is running, choose Silent, Standard, Sport or Ludicrous right in the app (Anycubic Kobra: three levels; Bambu Lab, Elegoo, Creality, Flashforge and Klipper printers: four).
