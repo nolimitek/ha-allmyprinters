@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.19.4
+
+- Flashforge: "Level the bed before printing" is now a checkbox in the print screens (on by default). Until now the app always asked the printer to level.
+- Flashforge Creator 5 / 5 Pro: when every tool prints from its own head, the app sends plain G-code again – this way is confirmed on a real Creator 5 Pro. The complete project file (0.19.3) is used when a tool prints from a different head.
+
 ## 0.19.3
 
 - Flashforge Creator 5 / 5 Pro: prints sliced in the app are now sent as the complete project file (.3mf with the G-code inside), exactly as the Flashforge slicer sends them, with the filament-to-head map always included. Needs AllMyPrinters Slicer 1.0.11 – the default slicer already has it; update your own slicer container if you host one.
