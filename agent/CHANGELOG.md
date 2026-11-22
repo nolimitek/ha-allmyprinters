@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.19.3
+
+- Flashforge Creator 5 / 5 Pro: prints sliced in the app are now sent as the complete project file (.3mf with the G-code inside), exactly as the Flashforge slicer sends them, with the filament-to-head map always included. Needs AllMyPrinters Slicer 1.0.11 – the default slicer already has it; update your own slicer container if you host one.
+- Flashforge Creator 5 / 5 Pro: further attempt to fix prints that the printer accepted but never started.
+
 ## 0.19.2
 
 - Flashforge: the print screens now show that Flashforge support is still in testing – please check on the printer that a print really starts.
