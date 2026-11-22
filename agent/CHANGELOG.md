@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.19.2
+
+- Flashforge: the print screens now show that Flashforge support is still in testing – please check on the printer that a print really starts.
+- Flashforge Creator 5 / 5 Pro: when every tool prints from its own head (tool 1 from head 1 …), the app now sends plain G-code instead of a packed .gcode.3mf.
+- Flashforge Creator 5 / 5 Pro: a packed .gcode.3mf now carries the full slice information Flash Studio writes (all four heads, filament-to-head map, layers).
+- Flashforge Creator 5 / 5 Pro: attempt to fix prints that the printer accepted but never started (it stopped responding for a few minutes).
+
 ## 0.19.1
 
 - Elegoo Centauri Carbon 2: new switch “Level bed before printing” when printing from the app. Untick it to skip the full bed probing, the same as ElegooSlicer’s “Auto bed leveling” box. The app remembers your choice per printer.
