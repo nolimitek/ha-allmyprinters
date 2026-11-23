@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.19.5
+
+- Library: add a ZIP file (e.g. the “download all” ZIP from Printables or Thingiverse) – the app unpacks it and puts every STL, 3MF and G-code part into one folder named after the ZIP. Images and text files are skipped.
+- Flashforge Creator 5 / 5 Pro: the “still in testing” note is gone – printing is confirmed on a real Creator 5 Pro (head 1, another head, two colours, without levelling). The other Flashforge models keep the note.
+- Flashforge Creator 5: the complete project file is only downloaded from the slicer when it is really needed (a tool printing from a different head).
+- Slicing: the loading circle no longer stutters while the slicer is working.
+
 ## 0.19.4
 
 - Flashforge: "Level the bed before printing" is now a checkbox in the print screens (on by default). Until now the app always asked the printer to level.
