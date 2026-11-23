@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.19.6
+
+- Settings → General: time format – automatic, 24-hour or 12-hour. Automatic uses 24-hour as soon as the app language or the device region does, so an English app in Sweden no longer shows AM/PM for the expected finish time.
+- Anycubic Kobra X (LAN mode): pause and stop from the app now reach the printer – the app sends the printer's own task id (the Kobra X ignored both before, only resume worked). The fan control uses it too.
+- Agent in the Android app: a file shared into the app (“Share” / “Open with”) is now sent to the agent first, so adding it to a bookmarked model no longer ends in “Upload failed”.
+- Anycubic in LAN mode (Kobra X, Kobra S1, Kobra 3 …): prints started on the printer or sent from Anycubic Slicer Next are now deducted from the spool instead of showing “Finished · no filament data”. The printer reports how much filament it actually pushed; with the ACE or the Kobra X feeder the usage goes to the slot that was feeding, and a cancelled print counts only what it really used.
+
 ## 0.19.5
 
 - Library: add a ZIP file (e.g. the “download all” ZIP from Printables or Thingiverse) – the app unpacks it and puts every STL, 3MF and G-code part into one folder named after the ZIP. Images and text files are skipped.
