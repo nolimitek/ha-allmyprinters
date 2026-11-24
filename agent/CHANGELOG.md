@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.20.0
+
+- Print object by object: when every part on the plate has its own single color (for example two cubes, one red and one white), the print view suggests printing one part after the other. There is no color change on every layer any more, so the print is often much faster and wastes far less filament. One tap turns it on just for this plate; if the parts don't fit with the spacing the print head needs, you get a clear message instead of a slicer error.
+
 ## 0.19.6
 
 - Settings → General: time format – automatic, 24-hour or 12-hour. Automatic uses 24-hour as soon as the app language or the device region does, so an English app in Sweden no longer shows AM/PM for the expected finish time.
