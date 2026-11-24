@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.21.0
+
+- New layout for Printers, Spools, Library and History, on the phone and on the PC: printer cards show fans & light, the slots as tiles and the last print at a glance, with Print · Camera · Control in one row; spool figures sit in one card with “almost empty” behind a button; the library has a single “Plate” button and file-type chips; history rows are named after the print, with spool and printer below.
+- Scan a spool’s QR code right in the “Assign spool” dialog.
+- Already-sliced 3MF files (.gcode.3mf from Bambu Studio or OrcaSlicer) go straight to the printer instead of being sliced again.
+- Snapmaker U1: every head can be chosen when slicing – before, only head 1 was selectable. A single-color print heats and primes the chosen head right from the start.
+- Heads or slots that the printer reports without a material (for example U1 spools without an RFID chip) use the material of the spool assigned in the app; without one, you pick the material in the print view.
+- The AllMyPrinters slicer now runs OrcaSlicer 2.5.2.
+- Agent: “Save as” now downloads the file only on the device that asked, not on every open page – and the file no longer goes missing before the download starts.
+- The G-code view showed “Time format” instead of “Print time”.
+
 ## 0.20.0
 
 - Print object by object: when every part on the plate has its own single color (for example two cubes, one red and one white), the print view suggests printing one part after the other. There is no color change on every layer any more, so the print is often much faster and wastes far less filament. One tap turns it on just for this plate; if the parts don't fit with the spacing the print head needs, you get a clear message instead of a slicer error.
