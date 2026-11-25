@@ -11,6 +11,8 @@ from yarl import URL
 # The agent answers from its own 15 s state; only when that is stale does it ask the printers first
 TIMEOUT = aiohttp.ClientTimeout(total=30)
 IMAGE_TIMEOUT = aiohttp.ClientTimeout(total=15)
+# live MJPEG stream: open as long as the dashboard shows it; only connecting and silence between frames are limited
+STREAM_TIMEOUT = aiohttp.ClientTimeout(total=None, sock_connect=10, sock_read=30)
 
 
 class AllMyPrintersError(Exception):
@@ -83,6 +85,24 @@ class AllMyPrintersApi:
     async def command(self, printer_id: str, cmd: str, **params: Any) -> None:
         """pause | resume | stop | dry_start | dry_stop | light | fan."""
         await self._request("POST", {"printer": printer_id, "cmd": cmd, **params})
+
+    def live_url(self, printer_id: str) -> str:
+        """Address of the camera's original H.264 stream (FLV) for Home Assistant's stream / go2rtc.
+
+        They fetch it without own headers, so the key goes into the query (the agent accepts that only for this path).
+        """
+        return str((self.url / "live" / printer_id).with_query(t=self._token))
+
+    async def mjpeg(self, printer_id: str) -> aiohttp.ClientResponse:
+        """Open the camera as an MJPEG stream (multipart/x-mixed-replace) at the camera's frame rate; the caller closes it."""
+        try:
+            return await self._session.get(
+                self.url / "mjpeg" / printer_id,
+                headers={"Authorization": f"Bearer {self._token}"},
+                timeout=STREAM_TIMEOUT,
+            )
+        except (aiohttp.ClientError, asyncio.TimeoutError) as err:
+            raise AllMyPrintersError("connection") from err
 
     async def image(self, kind: str, printer_id: str) -> tuple[bytes, str] | None:
         """Camera snapshot (kind "cam", JPEG) or the running job's model picture ("thumb"); None when there is none.

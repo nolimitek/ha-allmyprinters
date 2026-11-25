@@ -46,7 +46,7 @@ Per printer (one device each, below the agent device):
 | `light` Light, Head light, Camera light | for printers whose lights the agent can switch |
 | `fan` Part fan, Aux fan, Enclosure fan, Chamber fan, Air filter, Exhaust | speed in percent. Fans a printer only lets you change during a print (Anycubic, Flashforge) are unavailable while it is idle |
 | `event` Print | `started`, `finished`, `failed`, `cancelled` — for automations |
-| `camera` Camera | the printer's camera, through the agent (MJPEG, Anycubic/Bambu video and others). Live view in Home Assistant shows about two pictures per second |
+| `camera` Camera | the printer's camera, through the agent. Live view is smooth: H.264 cameras (Anycubic, Bambu Lab X1/H2/P2S) as a video stream via WebRTC/HLS, all others as MJPEG at the camera's frame rate (agent 0.23 or newer) |
 | `image` Model | preview picture of the model that is printing; unavailable while nothing prints |
 | `switch` *Box* drying | start/stop drying (e.g. Anycubic ACE) using the two settings below |
 | `number` *Box* drying temperature / duration | 35–55 °C, 1–24 h, kept in Home Assistant |
@@ -98,6 +98,8 @@ show_state: false
 ```
 
 The agent reads the printer's camera only while a dashboard with it is open and stops about 20 seconds after.
+
+For H.264 cameras (Anycubic, Bambu Lab X1/H2/P2S) the agent passes the printer's original video stream on unchanged, so Home Assistant shows it via WebRTC (go2rtc, included in Home Assistant) or HLS — as smooth as in the agent and without re-encoding. Other cameras come as an MJPEG stream at their own frame rate. With agents before 0.23 the live view falls back to still pictures (about two per second).
 
 ## Example automation
 

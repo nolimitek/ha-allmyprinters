@@ -95,3 +95,66 @@ async def test_model_picture_follows_the_job(hass: HomeAssistant, hass_client, a
     async_fire_time_changed(hass, dt_util.utcnow() + timedelta(seconds=40))
     await hass.async_block_till_done()
     assert hass.states.get(MODEL).state == "unavailable"
+
+
+# ── live view (0.3.0): H.264 cameras as stream source, the others as the agent's MJPEG stream ──
+MJPEG_CT = "multipart/x-mixed-replace; boundary=ampframe"
+MJPEG = b"--ampframe\r\nContent-Type: image/jpeg\r\nContent-Length: " + str(len(JPEG)).encode() + b"\r\n\r\n" + JPEG + b"\r\n"
+
+
+async def test_video_camera_is_a_stream_source(hass: HomeAssistant, aioclient_mock, cam_payload) -> None:
+    from homeassistant.components.camera import CameraEntityFeature, async_get_stream_source
+
+    cam_payload["printers"][0]["cam_stream"] = "video"
+    await _setup(hass, aioclient_mock, cam_payload)
+    state = hass.states.get(CAM)
+    assert state.attributes["supported_features"] & CameraEntityFeature.STREAM
+    src = await async_get_stream_source(hass, CAM)
+    assert src == f"{URL}/live/p1?t=" + ENTRY_DATA["token"]
+
+
+async def test_mjpeg_camera_proxies_the_agent_stream(hass: HomeAssistant, hass_client, aioclient_mock, cam_payload) -> None:
+    from homeassistant.components.camera import CameraEntityFeature, async_get_stream_source
+
+    cam_payload["printers"][0]["cam_stream"] = "mjpeg"
+    aioclient_mock.get(f"{URL}/mjpeg/p1", content=MJPEG * 3, headers={"Content-Type": MJPEG_CT})
+    await _setup(hass, aioclient_mock, cam_payload)
+    state = hass.states.get(CAM)
+    assert not state.attributes.get("supported_features", 0) & CameraEntityFeature.STREAM
+    assert await async_get_stream_source(hass, CAM) is None
+    client = await hass_client()
+    resp = await client.get(f"/api/camera_proxy_stream/{CAM}")
+    assert resp.status == 200 and resp.headers["Content-Type"] == MJPEG_CT
+    assert (await resp.read()) == MJPEG * 3
+    call = [c for c in aioclient_mock.mock_calls if str(c[1]).endswith("/ha/mjpeg/p1")][-1]
+    assert call[3]["Authorization"] == "Bearer " + ENTRY_DATA["token"]
+
+
+async def test_old_agent_without_stream_falls_back_to_stills(hass: HomeAssistant, hass_client, aioclient_mock, cam_payload) -> None:
+    from homeassistant.components.camera import CameraEntityFeature
+
+    # agent before the live streams: no cam_stream, /ha/mjpeg answers 401 (unknown path) → Home Assistant builds MJPEG from stills
+    aioclient_mock.get(f"{URL}/mjpeg/p1", status=HTTPStatus.UNAUTHORIZED, json={"error": "auth"})
+    aioclient_mock.get(f"{URL}/cam/p1", content=JPEG, headers={"Content-Type": "image/jpeg"})
+    await _setup(hass, aioclient_mock, cam_payload)
+    assert not hass.states.get(CAM).attributes.get("supported_features", 0) & CameraEntityFeature.STREAM
+    client = await hass_client()
+    resp = await client.get(f"/api/camera_proxy_stream/{CAM}")
+    assert resp.status == 200 and resp.headers["Content-Type"].startswith("multipart/x-mixed-replace")
+    chunk = await resp.content.read(4096)
+    assert JPEG[:4] in chunk
+    resp.close()
+
+
+async def test_stream_support_follows_the_agent(hass: HomeAssistant, aioclient_mock, cam_payload) -> None:
+    from homeassistant.components.camera import CameraEntityFeature
+
+    await _setup(hass, aioclient_mock, cam_payload)
+    assert not hass.states.get(CAM).attributes.get("supported_features", 0) & CameraEntityFeature.STREAM
+    # the agent learned the camera type (first picture) → next poll offers the stream
+    cam_payload["printers"][0]["cam_stream"] = "video"
+    aioclient_mock.clear_requests()
+    aioclient_mock.get(URL, json=cam_payload)
+    async_fire_time_changed(hass, dt_util.utcnow() + timedelta(seconds=60))
+    await hass.async_block_till_done()
+    assert hass.states.get(CAM).attributes["supported_features"] & CameraEntityFeature.STREAM

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.23.0
+
+- Snapmaker U1: choose bed leveling, flow calibration, vibration compensation and timelapse before printing – the app sends your choice to the printer right before the start (bed leveling is on by default).
+- Snapmaker U1 camera: with the original firmware the app wakes the camera and shows a live picture (about one frame per second); with the Extended firmware it uses the real MJPEG stream.
+- Prime tower on or off in the expert print settings (needs AllMyPrinters Slicer 1.0.14 or newer).
+- Home Assistant: smooth live camera (video stream for Anycubic and Bambu X1, full-rate MJPEG for the others).
+- The Wi-Fi search finds printers that are busy printing more reliably (a second, slower pass for Klipper printers).
+- Snapmaker U1 is shown as “Snapmaker U1” instead of “lava” – printers added earlier are renamed once, names you chose yourself stay.
+- Report a problem now asks for your email address so we can reply.
+
 ## 0.22.0
 
 - Files on the printer: on Klipper printers, the ⋯ menu of the printer card lists the G-code files already stored on the printer (with preview, print time and weight) and starts them directly – after checking whether the loaded spool is enough.
