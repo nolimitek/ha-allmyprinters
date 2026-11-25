@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.23.1
+
+- Filament catalog updated from SpoolmanDB – now with Snapmaker (e.g. SnapSpeed PLA, the spools that come with the U1) and many more filaments.
+
 ## 0.23.0
 
 - Snapmaker U1: choose bed leveling, flow calibration, vibration compensation and timelapse before printing – the app sends your choice to the printer right before the start (bed leveling is on by default).
