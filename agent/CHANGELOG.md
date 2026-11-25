@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.22.0
+
+- Files on the printer: on Klipper printers, the ⋯ menu of the printer card lists the G-code files already stored on the printer (with preview, print time and weight) and starts them directly – after checking whether the loaded spool is enough.
+- Spools of the same filament are stacked in one row with the number of spools and the total remaining; open it to see each spool with its number, location and when it was last used. This replaces the “Group: Filament” option.
+- Second color for a spool, for dual-color filament.
+
 ## 0.21.0
 
 - New layout for Printers, Spools, Library and History, on the phone and on the PC: printer cards show fans & light, the slots as tiles and the last print at a glance, with Print · Camera · Control in one row; spool figures sit in one card with “almost empty” behind a button; the library has a single “Plate” button and file-type chips; history rows are named after the print, with spool and printer below.
