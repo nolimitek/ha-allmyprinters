@@ -18,7 +18,7 @@
  */
 (() => {
 "use strict";
-const VERSION = "0.2.1";
+const VERSION = "0.3.0";
 const DOMAIN = "allmyprinters";
 const EXT_SLOT = 100;   // slot index of the external spool holder
 
