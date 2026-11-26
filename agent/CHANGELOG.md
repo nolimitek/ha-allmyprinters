@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.24.1
+
+- 3MF files that switch filament at a certain height (Bambu Studio / OrcaSlicer, typical for HueForge prints) are now recognised as multicolor: the library preview shows the colors by height, and the print view says “multicolor” and goes straight to assigning each color to a slot or head. With our slicer from 1.0.16 the printer then switches to the assigned filament at the right height.
+- Creality K2, Hi and newer K1C/K1 Max camera (WebRTC): the app now tells the printer its real Wi-Fi address instead of a hidden “.local” name, like Creality Print does. If the picture still does not come up, the log says exactly why (connection, codec, playback).
+
 ## 0.24.0
 
 - Every print file is checked for typical mistakes before it is sent – for example a tool change that heats the wrong head, or printing outside the bed. Works with our slicer, your own slicer and ready-made G-code. Only the result (which checks flagged something and how often) goes with the anonymous print start report, never the file.
