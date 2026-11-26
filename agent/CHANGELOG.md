@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.24.0
+
+- Every print file is checked for typical mistakes before it is sent – for example a tool change that heats the wrong head, or printing outside the bed. Works with our slicer, your own slicer and ready-made G-code. Only the result (which checks flagged something and how often) goes with the anonymous print start report, never the file.
+- Report a problem right from a print error – the printer and the error message are already filled in.
+- Bambu Lab: printing is no longer blocked in advance because of developer mode (the status was wrong on some models, e.g. H2C). If the printer really refuses, you now get a clear message on how to turn on LAN Only and Developer mode, and the print dialog shows the hint next to the printer.
+- G-code view: send errors are shown as readable messages instead of codes such as “devmode”.
+
 ## 0.23.1
 
 - Filament catalog updated from SpoolmanDB – now with Snapmaker (e.g. SnapSpeed PLA, the spools that come with the U1) and many more filaments.
