@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.24.4
+
+- Phone: the Models tab now asks whether you want your library or to find models – so your library is one tap away from the bottom bar.
+- Bambu Lab: if the printer doesn't confirm a print start, the app asks for its full status and waits a bit longer before giving up.
+- When a print start fails, the anonymous print start report now includes a short technical reason (printer states or an error term – never addresses or names), so we can find the cause faster.
+- Phone filter for model search: the platform list is collapsed like on the computer.
+- The live camera picture is centered on wide screens.
+- Phone filter: “Paid” in the price filter is no longer cut off.
+
 ## 0.24.3
 
 - 3MF files that switch filament by height (HueForge prints): the library card now shows a colored picture drawn from the model, instead of the all-black picture Bambu Studio saves in the file. Files already in your library are updated once in the background when you open the library.
