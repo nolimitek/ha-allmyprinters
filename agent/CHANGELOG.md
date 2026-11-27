@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.24.8
+
+- Snapmaker U1: unload filament from the app, head by head – printer menu (⋯) → “Unload filament”, pick head 1–4 and tap twice. The printer heats the head and pulls the filament back; the app shows the progress and tells you when to pull the filament out. Not possible during a print.
+
 ## 0.24.7
 
 - Delete files on Klipper printers: timelapse videos and G-code files on the printer can now be deleted right from the app (tap the bin twice). Both lists show how much space is left on the printer.
