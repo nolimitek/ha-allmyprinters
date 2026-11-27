@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.24.7
+
+- Delete files on Klipper printers: timelapse videos and G-code files on the printer can now be deleted right from the app (tap the bin twice). Both lists show how much space is left on the printer.
+- Snapmaker U1: the timelapse list explains that the printer still needs a few minutes after the print to put the video together.
+
 ## 0.24.6
 
 - Library: a model can now hold several files. Open a model and use “Files of this model” to add STL or 3MF files from your device or attach entries that are already in your library. The extra files don’t show up as separate cards, follow the model into its folder, and “All on one plate” opens them together in the plate editor.
