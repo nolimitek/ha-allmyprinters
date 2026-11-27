@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.24.2
+
+- Timelapses from the printer: “Timelapses” in the printer’s ⋯ menu lists the videos your Klipper printer recorded (Snapmaker U1, or any printer with moonraker-timelapse), newest first. Watch them right in the agent, also on the go, and save them. Broken recordings (for example after a cancelled print) show a hint instead of a black picture.
+
 ## 0.24.1
 
 - 3MF files that switch filament at a certain height (Bambu Studio / OrcaSlicer, typical for HueForge prints) are now recognised as multicolor: the library preview shows the colors by height, and the print view says “multicolor” and goes straight to assigning each color to a slot or head. With our slicer from 1.0.16 the printer then switches to the assigned filament at the right height.
