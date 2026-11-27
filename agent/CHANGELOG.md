@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.24.3
+
+- 3MF files that switch filament by height (HueForge prints): the library card now shows a colored picture drawn from the model, instead of the all-black picture Bambu Studio saves in the file. Files already in your library are updated once in the background when you open the library.
+- Parts you deleted or hid in the plate editor no longer show up again in the print view, and they are always left out when slicing.
+
 ## 0.24.2
 
 - Timelapses from the printer: “Timelapses” in the printer’s ⋯ menu lists the videos your Klipper printer recorded (Snapmaker U1, or any printer with moonraker-timelapse), newest first. Watch them right in the agent, also on the go, and save them. Broken recordings (for example after a cancelled print) show a hint instead of a black picture.
