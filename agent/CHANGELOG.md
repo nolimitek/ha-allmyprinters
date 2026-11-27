@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.24.9
+
+- The anonymous print start report now also says which platform the agent runs on (Docker, Windows, Home Assistant) – no other new data.
+- Klipper printers: the printer model read from a G-code file could become a settings line such as “printer_structure undefine” when the slicer left the printer profile name empty. The model is now read correctly, and a wrongly saved name is detected again.
+
 ## 0.24.8
 
 - Snapmaker U1: unload filament from the app, head by head – printer menu (⋯) → “Unload filament”, pick head 1–4 and tap twice. The printer heats the head and pulls the filament back; the app shows the progress and tells you when to pull the filament out. Not possible during a print.
