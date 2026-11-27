@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.24.6
+
+- Library: a model can now hold several files. Open a model and use “Files of this model” to add STL or 3MF files from your device or attach entries that are already in your library. The extra files don’t show up as separate cards, follow the model into its folder, and “All on one plate” opens them together in the plate editor.
+
 ## 0.24.5
 
 - Expert settings in the print view, rearranged: groups you can open and close with a summary of the current values, a row showing everything changed for this print (× resets it), quick buttons for layer height and infill, +/− for walls and layers, and rarely used options under “Fine-tuning”. Profiles: save and import now sit behind the ⋯ menu.
