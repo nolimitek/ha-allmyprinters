@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.24.11
+
+- Plate editor with several plates: when the parts don’t fit on one plate, they are spread over new plates automatically – when opening the editor and with “Arrange all”. Tabs above the bed switch between the plates (on the phone a drop-down list).
+- Move a part to another plate or to a new one (select the part → “Plate”), or add an empty plate with “+” and fill it from the library.
+- Print plate by plate: “Print plate 1” sends only the parts of that plate; back in the editor the plate is ticked off and the next one is shown. Saved plates keep the plate of every part.
+
 ## 0.24.10
 
 - Klipper/Moonraker printers on a smart plug (Moonraker power devices): the printer card shows “Powered off” with a “Switch on” button, and the power switch sits under “Controls” next to fans and lights. Switching off asks first and is not possible during a print.
