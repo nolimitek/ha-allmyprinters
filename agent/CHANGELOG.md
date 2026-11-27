@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.24.10
+
+- Klipper/Moonraker printers on a smart plug (Moonraker power devices): the printer card shows “Powered off” with a “Switch on” button, and the power switch sits under “Controls” next to fans and lights. Switching off asks first and is not possible during a print.
+- Printing to a printer that is switched off: the agent switches it on, uploads the file in the meantime, waits until Klipper is ready (up to 90 s) and then starts the print. This also works for “Files on the printer”.
+- “Power off after print” (printer menu ⋯ → “Power switch”): after a finished print the printer is switched off as soon as the nozzle is below 50 °C. There you also choose which device powers the printer if Moonraker lists several.
+- Klipper printers whose Klipper service is stopped (e.g. bound to the power device) now show “not ready” instead of “not reachable”.
+
 ## 0.24.9
 
 - The anonymous print start report now also says which platform the agent runs on (Docker, Windows, Home Assistant) – no other new data.
