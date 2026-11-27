@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.24.5
+
+- Expert settings in the print view, rearranged: groups you can open and close with a summary of the current values, a row showing everything changed for this print (× resets it), quick buttons for layer height and infill, +/− for walls and layers, and rarely used options under “Fine-tuning”. Profiles: save and import now sit behind the ⋯ menu.
+
 ## 0.24.4
 
 - Phone: the Models tab now asks whether you want your library or to find models – so your library is one tap away from the bottom bar.
